@@ -7,7 +7,6 @@ namespace SpaceFighter.Control
         [SerializeField] float _speed = 10f;
 
         private Camera _mainCamera;
-        private SpriteRenderer _spriteRenderer;
         private float _minY;
         private float _maxY;
         private float _minX;
@@ -15,7 +14,6 @@ namespace SpaceFighter.Control
 
         private void Awake()
         {
-            this._spriteRenderer = this.GetComponent<SpriteRenderer>();
             this._mainCamera = Camera.main;
 
             this._maxY = this._mainCamera.orthographicSize;
@@ -24,18 +22,13 @@ namespace SpaceFighter.Control
             this._minX = this._maxX * -1;
         }
 
-        private void Update()
+        public void Move(Vector3 addition)
         {
-            // TODO [GM]: Extract input handling to a PlayerController?
-            var xAxis = Input.GetAxis("Horizontal");
-            var yAxis = Input.GetAxis("Vertical");
-
             var currPos = this.transform.position;
-            var x = Mathf.Clamp((xAxis * this._speed * Time.deltaTime) + currPos.x, this._minX, this._maxX);
-            var y = Mathf.Clamp((yAxis * this._speed * Time.deltaTime) + currPos.y, this._minY, this._maxY);
-            var futurePosition = new Vector3(x, y);
+            var x = Mathf.Clamp((addition.x * this._speed * Time.deltaTime) + currPos.x, this._minX, this._maxX);
+            var y = Mathf.Clamp((addition.y * this._speed * Time.deltaTime) + currPos.y, this._minY, this._maxY);
 
-            this.transform.position = futurePosition;
+            this.transform.position = new Vector3(x, y);
         }
     }
 }

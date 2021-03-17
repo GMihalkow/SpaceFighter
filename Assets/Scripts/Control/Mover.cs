@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SpaceFighter.Core;
+using UnityEngine;
 
 namespace SpaceFighter.Control
 {
@@ -6,27 +7,18 @@ namespace SpaceFighter.Control
     {
         [SerializeField] float _speed = 10f;
 
-        private Camera _mainCamera;
-        private float _minY;
-        private float _maxY;
-        private float _minX;
-        private float _maxX;
+        private MapBounds _mapBounds;
 
         private void Awake()
         {
-            this._mainCamera = Camera.main;
-
-            this._maxY = this._mainCamera.orthographicSize;
-            this._minY = this._maxY * -1;
-            this._maxX = this._mainCamera.orthographicSize * this._mainCamera.aspect;
-            this._minX = this._maxX * -1;
+            this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
         public void Move(Vector3 addition)
         {
             var currPos = this.transform.position;
-            var x = Mathf.Clamp((addition.x * this._speed * Time.deltaTime) + currPos.x, this._minX, this._maxX);
-            var y = Mathf.Clamp((addition.y * this._speed * Time.deltaTime) + currPos.y, this._minY, this._maxY);
+            var x = Mathf.Clamp((addition.x * this._speed * Time.deltaTime) + currPos.x, this._mapBounds.MinX, this._mapBounds.MaxX);
+            var y = Mathf.Clamp((addition.y * this._speed * Time.deltaTime) + currPos.y, this._mapBounds.MinY, this._mapBounds.MaxY);
 
             this.transform.position = new Vector3(x, y);
         }

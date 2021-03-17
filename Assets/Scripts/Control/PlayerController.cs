@@ -1,19 +1,31 @@
-﻿using UnityEngine;
+﻿using SpaceFighter.Combat;
+using UnityEngine;
 
 namespace SpaceFighter.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        private Fighter _fighter;
         private Mover _mover;
 
         private void Awake()
         {
+            this._fighter = this.GetComponent<Fighter>();
             this._mover = this.GetComponent<Mover>();
         }
 
         private void Update()
         {
+            this.HandleCombat();
             this.HandleMovement();
+        }
+
+        private void HandleCombat()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                this._fighter.Shoot();
+            }
         }
 
         private void HandleMovement()

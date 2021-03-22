@@ -1,7 +1,7 @@
 ﻿using SpaceFighter.Core;
 using UnityEngine;
 
-namespace SpaceFighter.Control
+namespace SpaceFighter.Movement
 {
     public class Mover : MonoBehaviour
     {

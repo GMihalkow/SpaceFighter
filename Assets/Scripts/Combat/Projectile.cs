@@ -29,7 +29,6 @@ namespace SpaceFighter.Combat
             if (!this._mapBounds.IsInBounds(this.transform.position))
             {
                 GameObject.Destroy(this.gameObject);
-                return;
             }
         }
     }

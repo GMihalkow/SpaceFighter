@@ -11,11 +11,11 @@ namespace SpaceFighter.Core
         private float _maxX;
 
         public float MinX => this._minX;
-        
+
         public float MaxX => this._maxX;
-        
+
         public float MinY => this._minY;
-        
+
         public float MaxY => this._maxY;
 
         private void Awake()
@@ -29,5 +29,7 @@ namespace SpaceFighter.Core
         }
 
         public bool IsInBounds(Vector2 pos) => (pos.x >= this._minX && pos.x <= this._maxX) && (pos.y >= this._minY && pos.y <= this._maxY);
+
+        public bool IsBelowBounds(float y) => y <= this.MinY;
     }
 }

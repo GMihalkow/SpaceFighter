@@ -83,6 +83,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4adf642813206741ad0d0f45316bdc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionEffectPrefab: {fileID: 881424891475017613, guid: 2828f67d9815f494fb027cf6f0b73313,
+    type: 3}
+  _staticDamage: 5
   _rotationSpeed: 20
 --- !u!1001 &5906119668951792635
 PrefabInstance:

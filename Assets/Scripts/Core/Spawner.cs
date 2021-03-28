@@ -8,6 +8,7 @@ namespace SpaceFighter.Core
         [SerializeField] float _spawnFrequency = 5f;
         [SerializeField] float _topOffset = 2f;
         [SerializeField] string _prefabsDirectory;
+        [SerializeField] float _collidersScale = 0.8f;
 
         private MapBounds _mapBounds;
         private float _deltaPassed;
@@ -27,7 +28,10 @@ namespace SpaceFighter.Core
             {
                 var prefabInstance = GameObject.Instantiate(this._containerPrefab, this.GeneratePosition(), Quaternion.identity);
                 prefabInstance.GetComponent<SpriteRenderer>().sprite = this.GetRandomSprite();
-                prefabInstance.AddComponent<BoxCollider2D>().isTrigger = true;
+                
+                var boxCollider = prefabInstance.AddComponent<BoxCollider2D>();
+                boxCollider.isTrigger = true;
+                boxCollider.size = new Vector2(boxCollider.size.x * this._collidersScale, boxCollider.size.y * this._collidersScale);
 
                 this._deltaPassed = 0f;
             }

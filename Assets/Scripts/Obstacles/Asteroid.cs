@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace SpaceFighter.Obstacles
 {
-    public class Asteroid : MonoBehaviour
+    [RequireComponent(typeof(Obstacle))]
+    public class Asteroid : Obstacle
     {
         [SerializeField] float _rotationSpeed = 20f;
-        [SerializeField] float _flightSpeed = 1f;
 
         private float _bottomOffset = 1f;
         private SpriteRenderer _spriteRenderer;
@@ -20,7 +20,6 @@ namespace SpaceFighter.Obstacles
 
         private void Update()
         {
-            this.transform.position += (Vector3.down * (this._flightSpeed * Time.deltaTime));
             this.transform.Rotate(Vector3.back * (this._rotationSpeed * Time.deltaTime));
 
             if (this._mapBounds.IsBelowBounds(this.transform.position.y + this._bottomOffset + (this._spriteRenderer.sprite.bounds.size.y / 2)))

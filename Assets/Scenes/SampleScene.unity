@@ -219,6 +219,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteroidSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7782363867434786711, guid: ec941d7ed81468842af254d7b74c8280,
+        type: 3}
+      propertyPath: _prefabsDirectory
+      value: Asteroids/
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec941d7ed81468842af254d7b74c8280, type: 3}
 --- !u!1 &1409777045
@@ -316,21 +321,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 966476000191894502, guid: aea12e3533400d8468f4efee2124811d,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.15133429
-      objectReference: {fileID: 0}
-    - target: {fileID: 966476000191894502, guid: aea12e3533400d8468f4efee2124811d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.073227376
-      objectReference: {fileID: 0}
-    - target: {fileID: 966476000191894502, guid: aea12e3533400d8468f4efee2124811d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.4568807
-      objectReference: {fileID: 0}
-    - target: {fileID: 966476000191894502, guid: aea12e3533400d8468f4efee2124811d,
-        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -362,6 +352,36 @@ PrefabInstance:
     - target: {fileID: 966476000191894502, guid: aea12e3533400d8468f4efee2124811d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856661292845088453, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856661292845088453, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241082306955118120, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241082306955118120, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241082306955118120, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241082306955118120, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_UseFullKinematicContacts
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6220995893039119546, guid: aea12e3533400d8468f4efee2124811d,

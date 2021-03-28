@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1400918452128087566}
   - component: {fileID: 361967824840403622}
   - component: {fileID: 419486129294849175}
+  - component: {fileID: 6634564698163591118}
+  - component: {fileID: 5293635092484613203}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -172,3 +174,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 8136747632632806331, guid: ddbc102bd7392bf4c9fc13bae0ccbb3b,
     type: 3}
+--- !u!114 &6634564698163591118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618952683483821814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d246bed7ccac9bf46a76a2aacf3ad007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthPoints: 100
+--- !u!114 &5293635092484613203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618952683483821814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3fbe1b1797794a9fa66b5f1ef1924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

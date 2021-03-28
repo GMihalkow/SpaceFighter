@@ -7,6 +7,7 @@ namespace SpaceFighter.Core
         [SerializeField] GameObject _containerPrefab;
         [SerializeField] float _spawnFrequency = 5f;
         [SerializeField] float _topOffset = 2f;
+        [SerializeField] string _prefabsDirectory;
 
         private MapBounds _mapBounds;
         private float _deltaPassed;
@@ -15,7 +16,7 @@ namespace SpaceFighter.Core
         private void Awake()
         {
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
-            this.LoadSprites();
+            this._sprites = Resources.LoadAll<Sprite>(this._prefabsDirectory);
         }
 
         private void Update()
@@ -26,6 +27,7 @@ namespace SpaceFighter.Core
             {
                 var prefabInstance = GameObject.Instantiate(this._containerPrefab, this.GeneratePosition(), Quaternion.identity);
                 prefabInstance.GetComponent<SpriteRenderer>().sprite = this.GetRandomSprite();
+                prefabInstance.AddComponent<BoxCollider2D>().isTrigger = true;
 
                 this._deltaPassed = 0f;
             }
@@ -44,12 +46,7 @@ namespace SpaceFighter.Core
         {
             var x = Random.Range(this._mapBounds.MinX, this._mapBounds.MaxX);
 
-            return new Vector2(x, this._mapBounds.MaxY + this._topOffset); ;
-        }
-
-        private void LoadSprites()
-        {
-            this._sprites = Resources.LoadAll<Sprite>("Asteroids/");
+            return new Vector2(x, this._mapBounds.MaxY + this._topOffset);
         }
     }
 }

@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d79f849a731fbe438edd2bf91d6f6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 8136747632632806331, guid: ddbc102bd7392bf4c9fc13bae0ccbb3b,
-    type: 3}
+  _projectileSpawner: {fileID: 11400000, guid: 9ecc7885d39501a4c85583fac9e69f90, type: 2}
+  _attackDamage: 5
 --- !u!114 &6634564698163591118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthPoints: 100
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5293635092484613203
 MonoBehaviour:
   m_ObjectHideFlags: 0

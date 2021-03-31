@@ -87,6 +87,33 @@ MonoBehaviour:
     type: 3}
   _staticDamage: 5
   _rotationSpeed: 20
+--- !u!114 &6219922715820628174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528654063542898396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d246bed7ccac9bf46a76a2aacf3ad007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthPoints: 15
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1034168265110697342}
+        m_MethodName: Explode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5906119668951792635
 PrefabInstance:
   m_ObjectHideFlags: 0

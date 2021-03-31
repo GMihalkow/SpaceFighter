@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace SpaceFighter.Obstacles
 {
-    [RequireComponent(typeof(Obstacle))]
     public class Asteroid : Obstacle
     {
         [SerializeField] float _rotationSpeed = 20f;
@@ -12,8 +11,10 @@ namespace SpaceFighter.Obstacles
         private SpriteRenderer _spriteRenderer;
         private MapBounds _mapBounds;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             this._spriteRenderer = this.GetComponent<SpriteRenderer>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }

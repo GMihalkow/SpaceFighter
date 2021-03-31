@@ -5,10 +5,19 @@ namespace SpaceFighter.Combat
 {
     public class Projectile : MonoBehaviour
     {
-        [SerializeField] bool _positiveDirection = false;
-        [SerializeField] float _speed = 5;
-
+        private bool _positiveDirection;
+        private float _speed;
+        private float _attackDamage;
         private MapBounds _mapBounds;
+
+        public float AttackDamage => this._attackDamage;
+
+        public void SetConfig(bool positiveDirection, float speed, float attackDamage)
+        {
+            this._speed = speed;
+            this._attackDamage = attackDamage;
+            this._positiveDirection = positiveDirection;
+        }
 
         private void Awake()
         {

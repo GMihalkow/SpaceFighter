@@ -4,11 +4,12 @@ namespace SpaceFighter.Combat
 {
     public class Fighter : MonoBehaviour
     {
-        [SerializeField] GameObject _projectilePrefab;
+        [SerializeField] ProjectileSpawner _projectileSpawner;
+        [SerializeField] float _attackDamage = 5f;
 
         public void Shoot()
         {
-            var projectile = GameObject.Instantiate(this._projectilePrefab, this.transform.position, Quaternion.identity);
+            this._projectileSpawner.Shoot(this.transform.position, this._attackDamage);
         }
     }
 }

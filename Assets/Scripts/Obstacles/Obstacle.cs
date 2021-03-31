@@ -29,6 +29,7 @@ namespace SpaceFighter.Obstacles
             var projectile = collision.GetComponent<Projectile>();
             if (this._health.IsDead || projectile == null) return;
 
+            projectile.PlayHitEffect();
             GameObject.Destroy(projectile.gameObject);
 
             this._health.TakeDamage(projectile.AttackDamage);

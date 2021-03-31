@@ -9,14 +9,21 @@ namespace SpaceFighter.Combat
         private float _speed;
         private float _attackDamage;
         private MapBounds _mapBounds;
+        private GameObject _hitEffectPrefab;
 
         public float AttackDamage => this._attackDamage;
 
-        public void SetConfig(bool positiveDirection, float speed, float attackDamage)
+        public void SetConfig(bool positiveDirection, float speed, float attackDamage, GameObject hitEffectPrefab)
         {
             this._speed = speed;
             this._attackDamage = attackDamage;
+            this._hitEffectPrefab = hitEffectPrefab;
             this._positiveDirection = positiveDirection;
+        }
+
+        public void PlayHitEffect()
+        {
+            GameObject.Instantiate(this._hitEffectPrefab, this.transform.position, Quaternion.identity);
         }
 
         private void Awake()

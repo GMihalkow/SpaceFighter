@@ -9,7 +9,7 @@ namespace SpaceFighter.Combat
 
         public void Shoot()
         {
-            this._projectileSpawner.Shoot(this.transform.position, this._attackDamage);
+            this._projectileSpawner.Shoot(this.transform.position, this._attackDamage, this.transform.rotation);
         }
     }
 }

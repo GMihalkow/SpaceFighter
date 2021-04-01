@@ -22,5 +22,18 @@ namespace SpaceFighter.Movement
 
             this.transform.position = new Vector3(x, y);
         }
+
+        /// <summary>
+        /// Rotates sprite in the Z to point towards specific point. 
+        /// Make sure your sprite is pointing towards the positive X .
+        /// </summary>
+        /// <param name="screenCoords">in screen point units</param>
+        public void LookAt(Vector3 screenCoords)
+        {
+            var dir = screenCoords - Camera.main.WorldToScreenPoint(this.transform.position);
+            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+            this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
     }
 }

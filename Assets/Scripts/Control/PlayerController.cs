@@ -17,6 +17,7 @@ namespace SpaceFighter.Control
 
         private void Update()
         {
+            this._mover.LookAt(Input.mousePosition);
             this.HandleCombat();
             this.HandleMovement();
         }

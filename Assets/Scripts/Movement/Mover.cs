@@ -14,13 +14,28 @@ namespace SpaceFighter.Movement
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
-        public void Move(Vector3 addition)
+        public void MoveInBounds(Vector3 addition, Space space = Space.World)
         {
             var currPos = this.transform.position;
             var x = Mathf.Clamp((addition.x * this._speed * Time.deltaTime) + currPos.x, this._mapBounds.MinX, this._mapBounds.MaxX);
             var y = Mathf.Clamp((addition.y * this._speed * Time.deltaTime) + currPos.y, this._mapBounds.MinY, this._mapBounds.MaxY);
 
-            this.transform.position = new Vector3(x, y);
+            if (space == Space.World)
+            {
+                this.transform.position = new Vector3(x, y);
+            }
+            else
+            {
+                x = Mathf.Clamp((addition.x * this._speed * Time.deltaTime), this._mapBounds.MinX, this._mapBounds.MaxX - currPos.x);
+                y = Mathf.Clamp((addition.y * this._speed * Time.deltaTime), this._mapBounds.MinY, this._mapBounds.MaxY - currPos.y);
+
+                this.transform.Translate(new Vector3(x, y), space);
+            }
+        }
+
+        public void Move(Vector3 addition, Space space = Space.World)
+        {
+            this.transform.Translate(addition * this._speed * Time.deltaTime, space);
         }
 
         /// <summary>

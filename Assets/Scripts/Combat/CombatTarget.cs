@@ -1,26 +1,23 @@
-﻿using SpaceFighter.Combat;
-using SpaceFighter.Core;
+﻿using SpaceFighter.Core;
 using UnityEngine;
 
-namespace SpaceFighter.Obstacles
+namespace SpaceFighter.Combat
 {
-    public abstract class Obstacle : MonoBehaviour
+    [RequireComponent(typeof(Health))]
+    public class CombatTarget : MonoBehaviour
     {
-        [SerializeField] float _staticDamage = 5f;
-        
         private Health _health;
 
-        public float StaticDamage => this._staticDamage;
-
-        protected virtual void Awake()
+        private void Awake()
         {
             this._health = this.GetComponent<Health>();
         }
 
+        // TODO [GM]: Extract and share logic with ObstacleTarget?
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var projectile = collision.GetComponent<Projectile>();
-            if (this._health.IsDead || projectile == null) return;
+            if (projectile == null || projectile.CompareTag(this.tag)) return;
 
             projectile.PlayHitEffect();
             GameObject.Destroy(projectile.gameObject);

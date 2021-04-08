@@ -24,7 +24,7 @@ namespace SpaceFighter.Control
 
         private void HandleCombat()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 this._fighter.Shoot();
             }
@@ -35,7 +35,7 @@ namespace SpaceFighter.Control
             var xAxis = Input.GetAxis("Horizontal");
             var yAxis = Input.GetAxis("Vertical");
 
-            this._mover.Move(new Vector3(xAxis, yAxis));
+            this._mover.MoveInBounds(new Vector3(xAxis, yAxis));
         }
     }
 }

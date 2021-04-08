@@ -28,6 +28,18 @@ namespace SpaceFighter.Core
             this._minX = this._maxX * -1;
         }
 
+        /// <summary>
+        /// Generates a random position at the top of the map
+        /// </summary>
+        /// <param name="topOffset"></param>
+        /// <returns></returns>
+        public Vector2 GeneratePosition(float topOffset = 0f)
+        {
+            var x = Random.Range(this._minX, this._maxX);
+
+            return new Vector2(x, this._maxY + topOffset);
+        }
+
         public bool IsInBounds(Vector2 pos) => (pos.x >= this._minX && pos.x <= this._maxX) && (pos.y >= this._minY && pos.y <= this._maxY);
 
         public bool IsBelowBounds(float y) => y <= this.MinY;

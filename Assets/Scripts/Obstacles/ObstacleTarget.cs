@@ -20,7 +20,7 @@ namespace SpaceFighter.Obstacles
             if (obstacleComponent == null) return;
 
             this._health.TakeDamage(obstacleComponent.StaticDamage);
-            obstacleComponent.Explode();
+            obstacleComponent.GetComponent<Health>().Explode();
         }
     }
 }

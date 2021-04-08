@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 419486129294849175}
   - component: {fileID: 6634564698163591118}
   - component: {fileID: 5293635092484613203}
+  - component: {fileID: 6866091536573803708}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,10 +137,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d246bed7ccac9bf46a76a2aacf3ad007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionPrefab: {fileID: 2160538440331237927, guid: 47ad610c3b035c048b27da566f8fe1b7,
+    type: 3}
   _healthPoints: 100
   _onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6634564698163591118}
+        m_MethodName: Explode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5293635092484613203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +164,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3fbe1b1797794a9fa66b5f1ef1924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6866091536573803708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618952683483821814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59ba1377e49af44a9620d4ebfb377fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7163723406140549436
@@ -163,7 +189,7 @@ GameObject:
   - component: {fileID: 1093310792123662673}
   - component: {fileID: 226205645477296630}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

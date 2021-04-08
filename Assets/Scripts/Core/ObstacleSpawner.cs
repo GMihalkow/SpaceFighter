@@ -2,7 +2,7 @@
 
 namespace SpaceFighter.Core
 {
-    public class Spawner : MonoBehaviour
+    public class ObstacleSpawner : MonoBehaviour
     {
         [SerializeField] GameObject _containerPrefab;
         [SerializeField] float _spawnFrequency = 5f;
@@ -11,7 +11,7 @@ namespace SpaceFighter.Core
         [SerializeField] float _collidersScale = 0.8f;
 
         private MapBounds _mapBounds;
-        private float _deltaPassed;
+        private float _timePassed;
         private Sprite[] _sprites;
 
         private void Awake()
@@ -22,18 +22,18 @@ namespace SpaceFighter.Core
 
         private void Update()
         {
-            this._deltaPassed += Time.unscaledDeltaTime;
+            this._timePassed += Time.unscaledDeltaTime;
 
-            if (Mathf.Approximately(this._deltaPassed, this._spawnFrequency) || this._deltaPassed > this._spawnFrequency)
+            if (Mathf.Approximately(this._timePassed, this._spawnFrequency) || this._timePassed > this._spawnFrequency)
             {
-                var prefabInstance = GameObject.Instantiate(this._containerPrefab, this.GeneratePosition(), Quaternion.identity);
+                var prefabInstance = GameObject.Instantiate(this._containerPrefab, this._mapBounds.GeneratePosition(this._topOffset), Quaternion.identity);
                 prefabInstance.GetComponent<SpriteRenderer>().sprite = this.GetRandomSprite();
                 
                 var boxCollider = prefabInstance.AddComponent<BoxCollider2D>();
                 boxCollider.isTrigger = true;
                 boxCollider.size = new Vector2(boxCollider.size.x * this._collidersScale, boxCollider.size.y * this._collidersScale);
 
-                this._deltaPassed = 0f;
+                this._timePassed = 0f;
             }
         }
 
@@ -44,13 +44,6 @@ namespace SpaceFighter.Core
             var randomIndex = Mathf.FloorToInt(Random.Range(0, this._sprites.Length - 1));
 
             return this._sprites[randomIndex];
-        }
-
-        private Vector2 GeneratePosition()
-        {
-            var x = Random.Range(this._mapBounds.MinX, this._mapBounds.MaxX);
-
-            return new Vector2(x, this._mapBounds.MaxY + this._topOffset);
         }
     }
 }

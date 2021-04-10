@@ -26,10 +26,9 @@ namespace SpaceFighter.Movement
             }
             else
             {
-                x = Mathf.Clamp((addition.x * this._speed * Time.deltaTime), this._mapBounds.MinX, this._mapBounds.MaxX - currPos.x);
-                y = Mathf.Clamp((addition.y * this._speed * Time.deltaTime), this._mapBounds.MinY, this._mapBounds.MaxY - currPos.y);
+                var diff = new Vector3(x, y, this.transform.position.z) - this.transform.position;
 
-                this.transform.Translate(new Vector3(x, y), space);
+                this.transform.Translate(diff, space);
             }
         }
 

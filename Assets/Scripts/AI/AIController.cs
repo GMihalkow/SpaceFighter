@@ -1,4 +1,5 @@
 ﻿using SpaceFighter.Combat;
+using SpaceFighter.Core;
 using SpaceFighter.Movement;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ namespace SpaceFighter.AI
         private float _timePassedSinceAttack;
         private GameObject _player;
         private Fighter _fighter;
+        private SpriteRenderer _spriteRenderer;
+        private MapBounds _mapBounds;
         private Mover _mover;
         private Vector2 _lastPlayerPos;
         private Quaternion _initialRotation;
@@ -24,18 +27,27 @@ namespace SpaceFighter.AI
             this._player = GameObject.FindGameObjectWithTag("Player");
             this._mover = this.GetComponent<Mover>();
             this._fighter = this.GetComponent<Fighter>();
+            this._spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
+            this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
         private void Update()
         {
+            if (this._mapBounds.IsBelowBounds(this.transform.position.y + (this._spriteRenderer.sprite.bounds.size.y / 2)))
+            {
+                GameObject.Destroy(this.gameObject);
+                return;
+            }
+
+            var isInMapBounds = this._mapBounds.IsInBounds(this.transform.position);
             var playerIsInRange = Vector2.Distance(this.transform.position, this._player.transform.position) < this._visionDistance;
 
-            if (playerIsInRange)
+            if (playerIsInRange && isInMapBounds)
             {
                 this.HandleCombat();
                 this._timePassedSinceAttack += Time.unscaledDeltaTime;
             }
-            else if (this._lastPlayerPos != default(Vector2))
+            else if (this._lastPlayerPos != default(Vector2) && isInMapBounds)
             {
                 this.HandlePatrol();
             }

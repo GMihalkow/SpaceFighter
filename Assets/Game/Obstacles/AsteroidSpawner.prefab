@@ -47,5 +47,5 @@ MonoBehaviour:
     type: 3}
   _spawnFrequency: 5
   _topOffset: 2
-  _prefabsDirectory: 
+  _prefabsDirectory: Asteroids/
   _collidersScale: 0.8

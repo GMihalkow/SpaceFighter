@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SpaceFighter.Obstacles
 {
-    public abstract class Obstacle : MonoBehaviour
+    public class Obstacle : MonoBehaviour
     {
         [SerializeField] float _staticDamage = 5f;
         

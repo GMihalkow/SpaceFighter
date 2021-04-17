@@ -50,6 +50,12 @@ namespace SpaceFighter.AI
             }
         }
 
+        public void StartPatrolling()
+        {
+            this._timePassedSincePatrolStart = 0f;
+            this.LookAtPlayer();
+        }
+
         private void HandlePatrol()
         {
             this._mover.MoveInBounds(Vector3.right, Space.Self);
@@ -64,8 +70,7 @@ namespace SpaceFighter.AI
 
         private void HandleCombat()
         {
-            this._lastPlayerPos = Camera.main.WorldToScreenPoint(this._player.transform.position);
-            this._mover.LookAt(this._lastPlayerPos);
+            this.LookAtPlayer();
 
             if (Mathf.Approximately(this._timePassedSinceAttack, this._attackTimeout) || this._timePassedSinceAttack >= this._attackTimeout)
             {
@@ -78,6 +83,12 @@ namespace SpaceFighter.AI
         {
             this._mover.Move(Vector3.down);
             this.transform.rotation = this._initialRotation;
+        }
+
+        private void LookAtPlayer()
+        {
+            this._lastPlayerPos = Camera.main.WorldToScreenPoint(this._player.transform.position);
+            this._mover.LookAt(this._lastPlayerPos);
         }
 
         private void OnDrawGizmosSelected()

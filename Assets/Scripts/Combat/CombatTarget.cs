@@ -1,11 +1,14 @@
 ﻿using SpaceFighter.Core;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SpaceFighter.Combat
 {
     [RequireComponent(typeof(Health))]
     public class CombatTarget : MonoBehaviour
     {
+        [SerializeField] UnityEvent _onHit;
+
         private Health _health;
 
         private void Awake()
@@ -22,6 +25,7 @@ namespace SpaceFighter.Combat
             projectile.PlayHitEffect();
             GameObject.Destroy(projectile.gameObject);
 
+            this._onHit?.Invoke();
             this._health.TakeDamage(projectile.AttackDamage);
         }
     }

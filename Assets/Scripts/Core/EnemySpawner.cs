@@ -24,7 +24,7 @@ namespace SpaceFighter.Core
             {
                 var prefab = this.GetRandomPrefab();
 
-                GameObject.Instantiate(prefab, this._mapBounds.GeneratePosition(this._topOffset), prefab.transform.rotation);
+                GameObject.Instantiate(prefab, this._mapBounds.GeneratePositionAboveCamera(this._topOffset), prefab.transform.rotation);
                 this._timePassed = 0f;
             }
         }

@@ -4,11 +4,16 @@ namespace SpaceFighter.Core
 {
     public class MapBounds : MonoBehaviour
     {
+        private SpriteRenderer _bg;
         private Camera _mainCamera;
         private float _minY;
         private float _maxY;
         private float _minX;
         private float _maxX;
+        private float _minCameraY;
+        private float _maxCameraY;
+        private float _minCameraX;
+        private float _maxCameraX;
 
         public float MinX => this._minX;
 
@@ -21,23 +26,32 @@ namespace SpaceFighter.Core
         private void Awake()
         {
             this._mainCamera = Camera.main;
+            this._bg = GameObject.Find("Background").GetComponent<SpriteRenderer>();
 
-            this._maxY = this._mainCamera.orthographicSize;
+            this._maxY = this._bg.bounds.size.x / 2;
             this._minY = this._maxY * -1;
-            this._maxX = this._mainCamera.orthographicSize * this._mainCamera.aspect;
+            this._maxX = this._bg.bounds.size.y / 2;
             this._minX = this._maxX * -1;
         }
 
+        private void LateUpdate()
+        {
+            this._maxCameraY = this.transform.position.y + (this._mainCamera.orthographicSize / 2);
+            this._minCameraY = this.transform.position.y - (this._mainCamera.orthographicSize / 2);
+            this._maxCameraX = this.transform.position.x + (this._mainCamera.orthographicSize * this._mainCamera.aspect);
+            this._minCameraX = this.transform.position.x - (this._mainCamera.orthographicSize * this._mainCamera.aspect);
+        }
+
         /// <summary>
-        /// Generates a random position at the top of the map
+        /// Generates a random position at the top of the camera view
         /// </summary>
         /// <param name="topOffset"></param>
         /// <returns></returns>
-        public Vector2 GeneratePosition(float topOffset = 0f)
+        public Vector2 GeneratePositionAboveCamera(float topOffset = 0f)
         {
-            var x = Random.Range(this._minX, this._maxX);
+            var x = Random.Range(this._minCameraX, this._maxCameraX);
 
-            return new Vector2(x, this._maxY + topOffset);
+            return new Vector2(x, this._maxCameraY + topOffset);
         }
 
         public bool IsInBounds(Vector2 pos) => (pos.x >= this._minX && pos.x <= this._maxX) && (pos.y >= this._minY && pos.y <= this._maxY);

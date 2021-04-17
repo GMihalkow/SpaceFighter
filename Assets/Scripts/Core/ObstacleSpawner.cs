@@ -26,7 +26,7 @@ namespace SpaceFighter.Core
 
             if (Mathf.Approximately(this._timePassed, this._spawnFrequency) || this._timePassed > this._spawnFrequency)
             {
-                var prefabInstance = GameObject.Instantiate(this._containerPrefab, this._mapBounds.GeneratePosition(this._topOffset), Quaternion.identity);
+                var prefabInstance = GameObject.Instantiate(this._containerPrefab, this._mapBounds.GeneratePositionAboveCamera(this._topOffset), Quaternion.identity);
                 prefabInstance.GetComponent<SpriteRenderer>().sprite = this.GetRandomSprite();
                 
                 var boxCollider = prefabInstance.AddComponent<BoxCollider2D>();

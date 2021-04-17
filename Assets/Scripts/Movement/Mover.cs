@@ -7,10 +7,12 @@ namespace SpaceFighter.Movement
     {
         [SerializeField] float _speed = 10f;
 
+        private SpriteRenderer _spriteRenderer;
         private MapBounds _mapBounds;
 
         private void Awake()
         {
+            this._spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
@@ -32,9 +34,21 @@ namespace SpaceFighter.Movement
             }
         }
 
-        public void Move(Vector3 addition, Space space = Space.World)
+        /// <summary>
+        /// Moves object in world
+        /// </summary>
+        /// <param name="addition">amount to move object with</param>
+        /// <param name="space">world of local axis</param>
+        /// <param name="removeIfBelowMap">remove the destroy the object if it is below the map</param>
+        public void Move(Vector3 addition, Space space = Space.World, bool removeIfBelowMap = true)
         {
             this.transform.Translate(addition * this._speed * Time.deltaTime, space);
+
+            if (this._mapBounds.IsBelowBounds(this.transform.position.y + (this._spriteRenderer.sprite.bounds.size.y / 2)) && removeIfBelowMap)
+            {
+                GameObject.Destroy(this.gameObject);
+                return;
+            }
         }
 
         /// <summary>

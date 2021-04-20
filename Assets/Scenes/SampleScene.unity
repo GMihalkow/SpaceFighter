@@ -423,6 +423,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2589962562155997805, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: _shootTimeout
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3495705943273743114, guid: aea12e3533400d8468f4efee2124811d,
         type: 3}
       propertyPath: m_BackGroundColor.b
@@ -472,6 +477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308269759109907283, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: _speedWhileAttacking
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aea12e3533400d8468f4efee2124811d, type: 3}

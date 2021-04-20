@@ -6,8 +6,11 @@ namespace SpaceFighter.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] float _shootTimeout = 0.15f;
+
         private Fighter _fighter;
         private Mover _mover;
+        private float _timePassedSinceLastShot;
 
         private void Awake()
         {
@@ -24,9 +27,21 @@ namespace SpaceFighter.Control
 
         private void HandleCombat()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            this._mover.UseMinSpeed = Input.GetKey(KeyCode.Mouse0);
+
+            if (Input.GetKey(KeyCode.Mouse0))
             {
-                this._fighter.Shoot();
+                this._timePassedSinceLastShot += Time.unscaledDeltaTime;
+                
+                if (Mathf.Approximately(this._timePassedSinceLastShot, this._shootTimeout) || this._timePassedSinceLastShot >= this._shootTimeout)
+                {
+                    this._fighter.Shoot();
+                    this._timePassedSinceLastShot = 0f;
+                }
+            }
+            else
+            {
+                this._timePassedSinceLastShot = 0f;
             }
         }
 

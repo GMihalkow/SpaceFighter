@@ -5,10 +5,20 @@ namespace SpaceFighter.Movement
 {
     public class Mover : MonoBehaviour
     {
-        [SerializeField] float _speed = 10f;
+        [SerializeField] float _maxSpeed = 10f;
+        [SerializeField] float _minSpeed = 3f;
 
         private SpriteRenderer _spriteRenderer;
         private MapBounds _mapBounds;
+        private bool _useMinSpeed;
+
+        public bool UseMinSpeed
+        { 
+            set
+            {
+                this._useMinSpeed = value;
+            } 
+        }
 
         private void Awake()
         {
@@ -18,9 +28,11 @@ namespace SpaceFighter.Movement
 
         public void MoveInBounds(Vector3 addition, Space space = Space.World)
         {
+            var speed = this._useMinSpeed ? this._minSpeed : this._maxSpeed;
+
             var currPos = this.transform.position;
-            var x = Mathf.Clamp((addition.x * this._speed * Time.deltaTime) + currPos.x, this._mapBounds.MinX, this._mapBounds.MaxX);
-            var y = Mathf.Clamp((addition.y * this._speed * Time.deltaTime) + currPos.y, this._mapBounds.MinY, this._mapBounds.MaxY);
+            var x = Mathf.Clamp((addition.x * speed * Time.deltaTime) + currPos.x, this._mapBounds.MinX, this._mapBounds.MaxX);
+            var y = Mathf.Clamp((addition.y * speed * Time.deltaTime) + currPos.y, this._mapBounds.MinY, this._mapBounds.MaxY);
 
             if (space == Space.World)
             {
@@ -42,7 +54,9 @@ namespace SpaceFighter.Movement
         /// <param name="removeIfBelowMap">remove the destroy the object if it is below the map</param>
         public void Move(Vector3 addition, Space space = Space.World, bool removeIfBelowMap = true)
         {
-            this.transform.Translate(addition * this._speed * Time.deltaTime, space);
+            var speed = this._useMinSpeed ? this._minSpeed : this._maxSpeed;
+
+            this.transform.Translate(addition * speed * Time.deltaTime, space);
 
             if (this._mapBounds.IsBelowBounds(this.transform.position.y + (this._spriteRenderer.sprite.bounds.size.y / 2)) && removeIfBelowMap)
             {

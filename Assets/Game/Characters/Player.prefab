@@ -51,7 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0f180b95f128442bbbf1cdf906f126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _maxSpeed: 5
+  _minSpeed: 3
 --- !u!50 &2031065194605889251
 Rigidbody2D:
   serializedVersion: 4
@@ -111,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a667feacfb1ec34c9afebcf210f0415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shootTimeout: 0.15
 --- !u!114 &419486129294849175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59ba1377e49af44a9620d4ebfb377fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7163723406140549436
 GameObject:
   m_ObjectHideFlags: 0

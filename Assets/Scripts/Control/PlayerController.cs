@@ -29,10 +29,13 @@ namespace SpaceFighter.Control
         {
             this._mover.UseMinSpeed = Input.GetKey(KeyCode.Mouse0);
 
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                this._fighter.Shoot();
+            }
+
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                if (Mathf.Approximately(this._timePassedSinceLastShot, 0f)) this._fighter.Shoot();
-
                 this._timePassedSinceLastShot += Time.unscaledDeltaTime;
                 
                 if (Mathf.Approximately(this._timePassedSinceLastShot, this._shootTimeout) || this._timePassedSinceLastShot >= this._shootTimeout)

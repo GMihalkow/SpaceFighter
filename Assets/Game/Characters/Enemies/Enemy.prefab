@@ -162,3 +162,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _power: 1.5
   _randomize: 0
+  _timePerDirection: 0.8

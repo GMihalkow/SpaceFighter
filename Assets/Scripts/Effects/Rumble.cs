@@ -2,12 +2,13 @@
 using System.Collections;
 using UnityEngine;
 
-namespace SpaceFighter.Core
+namespace SpaceFighter.Effects
 {
     public class Rumble : MonoBehaviour
     {
         [SerializeField] float _power = 1.5f;
         [SerializeField] bool _randomize = false;
+        [SerializeField] float _timePerDirection = 0.12f;
 
         private Mover _mover;
 
@@ -23,19 +24,23 @@ namespace SpaceFighter.Core
 
         private IEnumerator RumbleCoroutine()
         {
-            var frames = 12;
-            var directions = new Vector3[] { Vector3.up, Vector3.down, Vector3.left, Vector3.right };
+            var timePassed = 0f;
+            var directions = new Vector3[] { Vector3.left, Vector3.right, Vector3.left, Vector3.right };
 
             foreach (var dir in directions)
             {
-                for (int i = 0; i <= frames; i++)
+                while (timePassed < this._timePerDirection)
                 {
                     var power = this._randomize ? Random.Range(0f, this._power) : this._power;
 
-                    this._mover.Move(dir * power);
+                    this._mover.Move(dir * power, Space.Self);
+
+                    timePassed += Time.unscaledDeltaTime;
 
                     yield return new WaitForEndOfFrame();
                 }
+
+                timePassed = 0f;
             }
         }
     }

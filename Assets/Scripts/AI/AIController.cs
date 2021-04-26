@@ -8,11 +8,13 @@ namespace SpaceFighter.AI
     public class AIController : MonoBehaviour
     {
         [SerializeField] float _visionDistance = 3f;
-        [SerializeField] float _attackTimeout = 1f;
+        [SerializeField] float _minAttackTimeout = 0.5f;
+        [SerializeField] float _maxAttackTimeout = 1f;
         [SerializeField] float _patrolTimeout = 3f;
 
         private float _timePassedSincePatrolStart;
         private float _timePassedSinceAttack;
+        private float _currentAttackTimeout;
         private GameObject _player;
         private Fighter _fighter;
         private MapBounds _mapBounds;
@@ -27,6 +29,7 @@ namespace SpaceFighter.AI
             this._mover = this.GetComponent<Mover>();
             this._fighter = this.GetComponent<Fighter>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
+            this._currentAttackTimeout = Random.Range(this._minAttackTimeout, this._maxAttackTimeout);
         }
 
         private void Update()
@@ -72,10 +75,12 @@ namespace SpaceFighter.AI
         {
             this.LookAtPlayer();
 
-            if (Mathf.Approximately(this._timePassedSinceAttack, this._attackTimeout) || this._timePassedSinceAttack >= this._attackTimeout)
+            if (Mathf.Approximately(this._timePassedSinceAttack, this._currentAttackTimeout) || this._timePassedSinceAttack >= this._currentAttackTimeout)
             {
                 this._fighter.Shoot();
                 this._timePassedSinceAttack = 0f;
+                Debug.Log(this._currentAttackTimeout);
+                this._currentAttackTimeout = Random.Range(this._minAttackTimeout, this._maxAttackTimeout);
             }
         }
 

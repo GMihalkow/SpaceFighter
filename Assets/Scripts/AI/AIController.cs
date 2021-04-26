@@ -79,7 +79,6 @@ namespace SpaceFighter.AI
             {
                 this._fighter.Shoot();
                 this._timePassedSinceAttack = 0f;
-                Debug.Log(this._currentAttackTimeout);
                 this._currentAttackTimeout = Random.Range(this._minAttackTimeout, this._maxAttackTimeout);
             }
         }

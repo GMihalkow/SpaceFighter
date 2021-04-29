@@ -425,11 +425,6 @@ PrefabInstance:
       propertyPath: _shootTimeout
       value: 0.15
       objectReference: {fileID: 0}
-    - target: {fileID: 3495705942372267583, guid: aea12e3533400d8468f4efee2124811d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.721
-      objectReference: {fileID: 0}
     - target: {fileID: 3495705943273743113, guid: aea12e3533400d8468f4efee2124811d,
         type: 3}
       propertyPath: m_IsActive

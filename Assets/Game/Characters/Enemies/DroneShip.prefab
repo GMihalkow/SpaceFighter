@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 7058705288278675750, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7058705288278675750, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
@@ -245,7 +245,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 5127187496277242926}
+      objectReference: {fileID: 7286551110173143037}
     - target: {fileID: 7058705288278675750, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -254,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 7058705288278675750, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: _onHit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: BeginRumble
+      value: StartPatrolling
       objectReference: {fileID: 0}
     - target: {fileID: 7058705288278675750, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
@@ -275,15 +275,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6957998456988189194}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5127187496277242926 stripped
+--- !u!114 &7286551110173143037 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
+  m_CorrespondingSourceObject: {fileID: 401032691629583863, guid: 3614e9e75b1a9b640ab863800729bb2b,
     type: 3}
   m_PrefabInstance: {fileID: 6957998456988189194}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3849842915150413819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb8cbc9d182d884a9c2b24ba66388c1, type: 3}
+  m_Script: {fileID: 11500000, guid: d504a84b46c890c40b14ecb6e5c0c2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

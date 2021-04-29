@@ -64,7 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionDistance: 3
-  _attackTimeout: 1
+  _minAttackTimeout: 0.5
+  _maxAttackTimeout: 1
   _patrolTimeout: 3
 --- !u!114 &2333823564927886355
 MonoBehaviour:
@@ -98,8 +99,8 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3504386684399260924}
-        m_MethodName: Explode
+      - m_Target: {fileID: 401032691629583863}
+        m_MethodName: OnDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -124,8 +125,8 @@ MonoBehaviour:
   _onHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 401032691629583863}
-        m_MethodName: StartPatrolling
+      - m_Target: {fileID: 2857722425323468324}
+        m_MethodName: BeginRumble
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

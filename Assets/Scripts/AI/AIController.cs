@@ -1,6 +1,7 @@
 ﻿using SpaceFighter.Combat;
 using SpaceFighter.Core;
 using SpaceFighter.Movement;
+using SpaceFighter.UI;
 using UnityEngine;
 
 namespace SpaceFighter.AI
@@ -12,6 +13,8 @@ namespace SpaceFighter.AI
         [SerializeField] float _maxAttackTimeout = 1f;
         [SerializeField] float _patrolTimeout = 3f;
 
+        private Health _health;
+        private Score _score;
         private float _timePassedSincePatrolStart;
         private float _timePassedSinceAttack;
         private float _currentAttackTimeout;
@@ -25,6 +28,8 @@ namespace SpaceFighter.AI
         private void Awake()
         {
             this._initialRotation = this.transform.rotation;
+            this._health = this.GetComponent<Health>();
+            this._score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
             this._player = GameObject.FindGameObjectWithTag("Player");
             this._mover = this.GetComponent<Mover>();
             this._fighter = this.GetComponent<Fighter>();
@@ -51,6 +56,13 @@ namespace SpaceFighter.AI
                 this.HandleMovement();
                 this._timePassedSinceAttack = 0f;
             }
+        }
+
+        // called by event in editor
+        public void OnDeath()
+        {
+            this._score.Increment();
+            this._health.Explode();
         }
 
         public void StartPatrolling()

@@ -1,10 +1,13 @@
 ﻿using SpaceFighter.Core;
+using System.Collections;
 using UnityEngine;
 
 namespace SpaceFighter.Combat
 {
     public class Projectile : MonoBehaviour
     {
+        [SerializeField] float _maxLife = 2f;
+
         private float _speed;
         private float _attackDamage;
         private MapBounds _mapBounds;
@@ -15,6 +18,15 @@ namespace SpaceFighter.Combat
         private void Awake()
         {
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
+        }
+
+        private IEnumerator Start()
+        {
+            yield return new WaitForSecondsRealtime(this._maxLife);
+
+            this.PlayHitEffect();
+            
+            GameObject.Destroy(this.gameObject);
         }
 
         public void SetConfig(float speed, float attackDamage, GameObject hitEffectPrefab)

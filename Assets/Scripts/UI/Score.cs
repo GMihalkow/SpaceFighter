@@ -12,7 +12,7 @@ namespace SpaceFighter.UI
 
         private void Awake()
         {
-            this._text = this.GetComponentInChildren<Text>();
+            this._text = this.GetComponent<Text>();
         }
 
         private void Start() => this.UpdateText();

@@ -26,7 +26,7 @@ namespace SpaceFighter.Core
         private void Awake()
         {
             this._mainCamera = Camera.main;
-            this._bg = GameObject.Find("Background").GetComponent<SpriteRenderer>();
+            this._bg = GameObject.FindGameObjectWithTag("LevelBackground").GetComponent<SpriteRenderer>();
 
             this._maxY = this._bg.bounds.size.x / 2;
             this._minY = this._maxY * -1;

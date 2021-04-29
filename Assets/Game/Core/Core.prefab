@@ -171,6 +171,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
+        type: 3}
+      propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
+        type: 3}
+      propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
+        type: 3}
+      propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4601123051701208071}
+    - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
+        type: 3}
+      propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
+        type: 3}
+      propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
+        type: 3}
+      propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8178513866216440728, guid: 514d30f3e1367334a8c033302f0dadc3,
         type: 3}
       propertyPath: _speed
@@ -202,7 +232,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 966476000191894502}
     m_Modifications:
+    - target: {fileID: 130572239175373970, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 130572239175373970, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 130572239175373970, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885125420850375396, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -784
+      objectReference: {fileID: 0}
+    - target: {fileID: 885125420850375396, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 468
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987315563487616525, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987315563487616525, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2629537929110824276, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 3495705942372267581}
+    - target: {fileID: 5598389575853883534, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
         type: 3}
       propertyPath: _player
       value: 
@@ -280,3 +350,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9220280219336500391}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4601123051701208071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4625052830873411744, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 9220280219336500391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b33a368d8eda6345bca674c78510336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

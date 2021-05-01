@@ -45,5 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefabs:
   - {fileID: 3849842915150413819, guid: 942767c3c0e03844f8ee43bb745f014f, type: 3}
-  _spawnFrequency: 3
-  _topOffset: 2
+  - {fileID: 7687566103018083274, guid: 4cd10a2e6f7ab4d42947a64a001ef445, type: 3}

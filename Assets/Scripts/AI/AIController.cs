@@ -1,37 +1,28 @@
 ﻿using SpaceFighter.Combat;
 using SpaceFighter.Core;
-using SpaceFighter.Movement;
-using SpaceFighter.UI;
 using UnityEngine;
 
 namespace SpaceFighter.AI
 {
-    public class AIController : MonoBehaviour
+    public class AIController : BaseAI
     {
         [SerializeField] float _visionDistance = 3f;
         [SerializeField] float _minAttackTimeout = 0.5f;
         [SerializeField] float _maxAttackTimeout = 1f;
         [SerializeField] float _patrolTimeout = 3f;
 
-        private Health _health;
-        private Score _score;
         private float _timePassedSincePatrolStart;
         private float _timePassedSinceAttack;
         private float _currentAttackTimeout;
-        private GameObject _player;
         private Fighter _fighter;
         private MapBounds _mapBounds;
-        private Mover _mover;
-        private Vector2 _lastPlayerPos;
         private Quaternion _initialRotation;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             this._initialRotation = this.transform.rotation;
-            this._health = this.GetComponent<Health>();
-            this._score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
-            this._player = GameObject.FindGameObjectWithTag("Player");
-            this._mover = this.GetComponent<Mover>();
             this._fighter = this.GetComponent<Fighter>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
             this._currentAttackTimeout = Random.Range(this._minAttackTimeout, this._maxAttackTimeout);
@@ -56,13 +47,6 @@ namespace SpaceFighter.AI
                 this.HandleMovement();
                 this._timePassedSinceAttack = 0f;
             }
-        }
-
-        // called by event in editor
-        public void OnDeath()
-        {
-            this._score.Increment();
-            this._health.Explode();
         }
 
         public void StartPatrolling()
@@ -99,12 +83,6 @@ namespace SpaceFighter.AI
         {
             this._mover.Move(Vector3.down);
             this.transform.rotation = this._initialRotation;
-        }
-
-        private void LookAtPlayer()
-        {
-            this._lastPlayerPos = Camera.main.WorldToScreenPoint(this._player.transform.position);
-            this._mover.LookAt(this._lastPlayerPos);
         }
 
         private void OnDrawGizmosSelected()

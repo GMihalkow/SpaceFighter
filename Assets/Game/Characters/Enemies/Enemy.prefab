@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d79f849a731fbe438edd2bf91d6f6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileSpawner: {fileID: 0}
+  _projectileSpawner: {fileID: 11400000, guid: 2e50d0878b861bb4bb03d1836cd886bd, type: 2}
   _attackDamage: 5
 --- !u!114 &3504386684399260924
 MonoBehaviour:
@@ -110,6 +110,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7058705288278675750
 MonoBehaviour:
   m_ObjectHideFlags: 0

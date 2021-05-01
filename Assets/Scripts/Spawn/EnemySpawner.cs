@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace SpaceFighter.Spawn
 {
     public class EnemySpawner : Spawner
     {
         [SerializeField] GameObject[] _enemyPrefabs;
+
+        private int _lastIndex = -1;
 
         public override void Spawn(Vector2 position)
         {
@@ -17,9 +20,25 @@ namespace SpaceFighter.Spawn
         {
             if (this._enemyPrefabs.Length == 0) throw new System.InvalidOperationException("No prefabs specified.");
 
-            var randomIndex = Mathf.FloorToInt(Random.Range(0, this._enemyPrefabs.Length - 1));
+            var filteredIndexes = this.ExcludeIndex(this._lastIndex);
+            var filteredIndex = Mathf.FloorToInt(Random.Range(0, filteredIndexes.Count - 1));
 
-            return this._enemyPrefabs[randomIndex];
+            this._lastIndex = filteredIndexes[filteredIndex];
+
+            return this._enemyPrefabs[this._lastIndex];
+        }
+
+        private List<int> ExcludeIndex(int index)
+        {
+            var list = new List<int>();
+
+            for (int i = 0; i < this._enemyPrefabs.Length; i++)
+            {
+                if (index == i) continue;
+                list.Add(i);
+            }
+
+            return list;
         }
     }
 }

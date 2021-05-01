@@ -26,6 +26,11 @@ namespace SpaceFighter.Movement
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
+        /// <summary>
+        /// Moves object within map bounds and doesn't let it pass them
+        /// </summary>
+        /// <param name="addition">amount to move object with</param>
+        /// <param name="space">world of local axis</param>
         public void MoveInBounds(Vector3 addition, Space space = Space.World)
         {
             var speed = this._useMinSpeed ? this._minSpeed : this._maxSpeed;

@@ -49,7 +49,7 @@ namespace SpaceFighter.Core
         /// <returns></returns>
         public Vector2 GeneratePositionAboveCamera(float topOffset = 0f)
         {
-            var x = Random.Range(this._minCameraX, this._maxCameraX);
+            var x = Random.Range(Mathf.Max(this._minCameraX, this.MinX), Mathf.Min(this._maxCameraX, this.MaxX));
 
             return new Vector2(x, this._maxCameraY + topOffset);
         }

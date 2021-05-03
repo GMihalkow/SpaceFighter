@@ -54,7 +54,7 @@ namespace SpaceFighter.Core
             return new Vector2(x, this._maxCameraY + topOffset);
         }
 
-        public bool IsInBounds(Vector2 pos) => (pos.x >= this._minX && pos.x <= this._maxX) && (pos.y >= this._minY && pos.y <= this._maxY);
+        public bool IsInBounds(Vector2 pos, float offset = 0) => (pos.x >= this._minX - offset && pos.x <= this._maxX + offset) && (pos.y >= this._minY - offset && pos.y <= this._maxY + offset);
 
         public bool IsBelowBounds(float y) => y <= this.MinY;
     }

@@ -56,6 +56,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5534003340795664362, guid: ddbc102bd7392bf4c9fc13bae0ccbb3b,
         type: 3}
+      propertyPath: _destroyOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534003340795664362, guid: ddbc102bd7392bf4c9fc13bae0ccbb3b,
+        type: 3}
       propertyPath: _positiveDirection
       value: 1
       objectReference: {fileID: 0}

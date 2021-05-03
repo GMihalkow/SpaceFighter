@@ -7,6 +7,7 @@ namespace SpaceFighter.Combat
     public class Projectile : MonoBehaviour
     {
         [SerializeField] float _maxLife = 2f;
+        [SerializeField] float _destroyOffset = 5f;
 
         private float _speed;
         private float _attackDamage;
@@ -45,7 +46,7 @@ namespace SpaceFighter.Combat
         {
             this.transform.Translate(Vector3.right * (this._speed * Time.deltaTime), Space.Self);
             
-            if (!this._mapBounds.IsInBounds(this.transform.position))
+            if (!this._mapBounds.IsInBounds(this.transform.position, this._destroyOffset))
             {
                 GameObject.Destroy(this.gameObject);
             }

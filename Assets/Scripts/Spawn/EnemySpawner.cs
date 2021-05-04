@@ -21,7 +21,7 @@ namespace SpaceFighter.Spawn
             if (this._enemyPrefabs.Length == 0) throw new System.InvalidOperationException("No prefabs specified.");
 
             var filteredIndexes = this.ExcludeIndex(this._lastIndex);
-            var filteredIndex = Mathf.FloorToInt(Random.Range(0, filteredIndexes.Count - 1));
+            var filteredIndex = Mathf.FloorToInt(Random.Range(0, filteredIndexes.Count));
 
             this._lastIndex = filteredIndexes[filteredIndex];
 

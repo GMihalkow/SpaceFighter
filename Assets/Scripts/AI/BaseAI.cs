@@ -16,7 +16,7 @@ namespace SpaceFighter.AI
         protected virtual void Awake()
         {
             this._mover = this.GetComponent<Mover>();
-            this._player = GameObject.FindGameObjectWithTag("Player");
+            this._player = GameObject.Find("Player");
             this._health = this.GetComponent<Health>();
             this._score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
         }

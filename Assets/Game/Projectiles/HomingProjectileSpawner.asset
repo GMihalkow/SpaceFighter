@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759fdc1aa8fed7f4d84d320d5a78ad1c, type: 3}
+  m_Name: HomingProjectileSpawner
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4940991721249082812, guid: b4bb6ffcaa1a3734ab0ed1b2c8ace0be, type: 3}
+  _hitEffectPrefab: {fileID: 2748914832387483934, guid: 1207a6c6269c787409f4fd52d2171107,
+    type: 3}
+  _speed: 3

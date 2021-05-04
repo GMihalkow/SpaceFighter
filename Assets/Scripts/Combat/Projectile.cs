@@ -1,4 +1,5 @@
 ﻿using SpaceFighter.Core;
+using SpaceFighter.Movement;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace SpaceFighter.Combat
         [SerializeField] float _maxLife = 2f;
         [SerializeField] float _destroyOffset = 5f;
 
+        protected Mover _mover;
         private float _speed;
         private float _attackDamage;
         private MapBounds _mapBounds;
@@ -16,8 +18,9 @@ namespace SpaceFighter.Combat
 
         public float AttackDamage => this._attackDamage;
 
-        private void Awake()
+        protected virtual void Awake()
         {
+            this._mover = this.GetComponent<Mover>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
@@ -42,10 +45,10 @@ namespace SpaceFighter.Combat
             GameObject.Instantiate(this._hitEffectPrefab, this.transform.position, Quaternion.identity);
         }
 
-        private void Update()
+        protected virtual void Update()
         {
-            this.transform.Translate(Vector3.right * (this._speed * Time.deltaTime), Space.Self);
-            
+            this._mover.Move(Vector3.right * this._speed, Space.Self, false);
+
             if (!this._mapBounds.IsInBounds(this.transform.position, this._destroyOffset))
             {
                 GameObject.Destroy(this.gameObject);

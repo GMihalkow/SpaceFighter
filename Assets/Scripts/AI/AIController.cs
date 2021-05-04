@@ -49,6 +49,9 @@ namespace SpaceFighter.AI
             }
         }
 
+        /// <summary>
+        /// Called from Unity event
+        /// </summary>
         public void StartPatrolling()
         {
             this._timePassedSincePatrolStart = 0f;

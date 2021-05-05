@@ -43,6 +43,18 @@ namespace SpaceFighter.Core
         }
 
         /// <summary>
+        /// Generates a random position at the left of the camera view
+        /// </summary>
+        /// <param name="offset"></param>
+        /// <returns></returns>
+        public Vector2 GeneratePositionLeftOfCamera(float offset = 0f)
+        {
+            var y = Random.Range(Mathf.Max(this._minCameraY, this.MinY), Mathf.Min(this._maxCameraY, this.MaxY));
+
+            return new Vector2(this._minCameraX - offset, y);
+        }
+
+        /// <summary>
         /// Generates a random position at the top of the camera view
         /// </summary>
         /// <param name="topOffset"></param>

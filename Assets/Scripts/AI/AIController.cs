@@ -30,6 +30,8 @@ namespace SpaceFighter.AI
 
         private void Update()
         {
+            if (this._playerHealth.IsDead) return;
+
             var isInMapBounds = this._mapBounds.IsInBounds(this.transform.position);
             var playerIsInRange = Vector2.Distance(this.transform.position, this._player.transform.position) < this._visionDistance;
 

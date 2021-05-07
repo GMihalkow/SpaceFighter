@@ -26,20 +26,21 @@ namespace SpaceFighter.Core
 
         public void TakeDamage(float damage)
         {
-            this._isDead = this._healthPoints <= 0;
-
             if (this._isDead) return;
 
             this._healthPoints = Mathf.Max(0, this._healthPoints - damage);
+            this._isDead = this._healthPoints <= 0;
+
             this._onHealthChange?.Invoke(this._healthPoints / this._initialHealthPoints);
 
             if (this._healthPoints <= 0) this._onDeath.Invoke();
         }
 
-        public void Explode()
+        public void Explode(bool destroyAfter = true)
         {
             GameObject.Instantiate(this._explosionPrefab, this.transform.position, Quaternion.identity);
-            GameObject.Destroy(this.gameObject);
+            
+            if (destroyAfter) GameObject.Destroy(this.gameObject);
         }
     }
 }

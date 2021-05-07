@@ -11,12 +11,14 @@ namespace SpaceFighter.AI
         private Health _health;
         protected Mover _mover;
         protected GameObject _player;
+        protected Health _playerHealth;
         protected Vector2 _lastPlayerPos;
 
         protected virtual void Awake()
         {
             this._mover = this.GetComponent<Mover>();
             this._player = GameObject.Find("Player");
+            this._playerHealth = this._player.GetComponent<Health>();
             this._health = this.GetComponent<Health>();
             this._score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
         }

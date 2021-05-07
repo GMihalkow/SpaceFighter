@@ -1,5 +1,7 @@
 ﻿using SpaceFighter.Combat;
+using SpaceFighter.Core;
 using SpaceFighter.Movement;
+using SpaceFighter.Obstacles;
 using UnityEngine;
 
 namespace SpaceFighter.Control
@@ -8,21 +10,41 @@ namespace SpaceFighter.Control
     {
         [SerializeField] float _shootTimeout = 0.15f;
 
+        private Health _health;
         private Fighter _fighter;
         private Mover _mover;
         private float _timePassedSinceLastShot;
 
         private void Awake()
         {
+            this._health = this.GetComponent<Health>();
             this._fighter = this.GetComponent<Fighter>();
             this._mover = this.GetComponent<Mover>();
         }
 
         private void Update()
         {
+            if (this._health.IsDead) return;
+
             this._mover.LookAt(Input.mousePosition);
             this.HandleCombat();
             this.HandleMovement();
+        }
+
+        /// <summary>
+        /// Called on player's death
+        /// </summary>
+        public void OnDeath()
+        {
+            this._health.Explode(false);
+
+            this.GetComponent<BoxCollider2D>().isTrigger = false;
+            GameObject.Destroy(this.GetComponent<ObstacleTarget>());
+
+            var renderer = this.GetComponentInChildren<SpriteRenderer>();
+            if (renderer == null) return;
+
+            renderer.gameObject.SetActive(false);
         }
 
         private void HandleCombat()

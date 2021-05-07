@@ -145,8 +145,8 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6634564698163591118}
-        m_MethodName: Explode
+      - m_Target: {fileID: 361967824840403622}
+        m_MethodName: OnDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -156,6 +156,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5293635092484613203
 MonoBehaviour:
   m_ObjectHideFlags: 0

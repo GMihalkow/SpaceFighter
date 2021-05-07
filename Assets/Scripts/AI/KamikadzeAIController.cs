@@ -6,6 +6,8 @@ namespace SpaceFighter.AI
     {
         private void Update()
         {
+            if (this._playerHealth.IsDead) return;
+
             this.LookAtPlayer();
             this._mover.MoveInBounds(Vector3.right, Space.Self);
         }

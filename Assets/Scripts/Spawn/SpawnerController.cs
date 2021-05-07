@@ -10,6 +10,7 @@ namespace SpaceFighter.Spawn
         [SerializeField] float _spawnFrequency = 3f;
         [SerializeField] float _topOffset = 2f;
 
+        private bool _isStopped;
         private MapBounds _mapBounds;
         private float _timePassed;
 
@@ -20,6 +21,8 @@ namespace SpaceFighter.Spawn
 
         private void Update()
         {
+            if (this._isStopped) return;
+
             this._timePassed += Time.unscaledDeltaTime;
 
             if (Mathf.Approximately(this._timePassed, this._spawnFrequency) || this._timePassed > this._spawnFrequency)
@@ -35,6 +38,11 @@ namespace SpaceFighter.Spawn
 
                 this._timePassed = 0f;
             }
+        }
+
+        public void Stop()
+        {
+            this._isStopped = true;
         }
     }
 }

@@ -2,7 +2,7 @@
 using SpaceFighter.Movement;
 using UnityEngine;
 
-namespace SpaceFighter.Menu
+namespace SpaceFighter.UI
 {
     public class MenuItem : MonoBehaviour
     {

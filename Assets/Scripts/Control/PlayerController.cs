@@ -10,6 +10,7 @@ namespace SpaceFighter.Control
     {
         [SerializeField] float _shootTimeout = 0.15f;
 
+        private bool _gameIsPaused;
         private Health _health;
         private Fighter _fighter;
         private Mover _mover;
@@ -24,11 +25,18 @@ namespace SpaceFighter.Control
 
         private void Update()
         {
-            if (this._health.IsDead) return;
+            if (this._health.IsDead || this._gameIsPaused) return;
 
             this._mover.LookAt(Input.mousePosition);
             this.HandleCombat();
             this.HandleMovement();
+        }
+
+        public bool TogglePausedState()
+        {
+            this._gameIsPaused = !this._gameIsPaused;
+
+            return this._gameIsPaused;
         }
 
         /// <summary>

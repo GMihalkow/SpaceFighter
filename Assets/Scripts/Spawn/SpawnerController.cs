@@ -23,7 +23,7 @@ namespace SpaceFighter.Spawn
         {
             if (this._isStopped) return;
 
-            this._timePassed += Time.unscaledDeltaTime;
+            this._timePassed += Time.deltaTime;
 
             if (Mathf.Approximately(this._timePassed, this._spawnFrequency) || this._timePassed > this._spawnFrequency)
             {

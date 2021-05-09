@@ -31,7 +31,7 @@ namespace SpaceFighter.Spawn
                 this._spawnTimeout = 0f;
             }
 
-            this._spawnTimeout += Time.unscaledDeltaTime;
+            this._spawnTimeout += Time.deltaTime;
         }
 
         public override void Spawn(Vector2 position)

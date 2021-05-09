@@ -38,7 +38,7 @@ namespace SpaceFighter.AI
             if (playerIsInRange && isInMapBounds)
             {
                 this.HandleCombat();
-                this._timePassedSinceAttack += Time.unscaledDeltaTime;
+                this._timePassedSinceAttack += Time.deltaTime;
             }
             else if (this._lastPlayerPos != default(Vector2) && isInMapBounds)
             {
@@ -63,7 +63,7 @@ namespace SpaceFighter.AI
         private void HandlePatrol()
         {
             this._mover.MoveInBounds(Vector3.right, Space.Self);
-            this._timePassedSincePatrolStart += Time.unscaledDeltaTime;
+            this._timePassedSincePatrolStart += Time.deltaTime;
 
             if (Mathf.Approximately(this._timePassedSincePatrolStart, this._patrolTimeout) || this._timePassedSincePatrolStart >= this._patrolTimeout)
             {

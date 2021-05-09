@@ -35,7 +35,7 @@ namespace SpaceFighter.Effects
 
                     this._mover.Move(dir * power, Space.Self);
 
-                    timePassed += Time.unscaledDeltaTime;
+                    timePassed += Time.deltaTime;
 
                     yield return new WaitForEndOfFrame();
                 }

@@ -58,7 +58,7 @@ namespace SpaceFighter.Control
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                this._timePassedSinceLastShot += Time.unscaledDeltaTime;
+                this._timePassedSinceLastShot += Time.deltaTime;
                 
                 if (Mathf.Approximately(this._timePassedSinceLastShot, this._shootTimeout) || this._timePassedSinceLastShot >= this._shootTimeout)
                 {

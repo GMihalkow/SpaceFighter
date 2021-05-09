@@ -26,7 +26,7 @@ namespace SpaceFighter.Combat
 
         private IEnumerator Start()
         {
-            yield return new WaitForSecondsRealtime(this._maxLife);
+            yield return new WaitForSeconds(this._maxLife);
 
             this.PlayHitEffect();
             

@@ -159,7 +159,7 @@ PrefabInstance:
     - target: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: _power
-      value: 0.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
@@ -169,7 +169,7 @@ PrefabInstance:
     - target: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: _timePerDirection
-      value: 0.08
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3143364481025045097, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
@@ -223,13 +223,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7286551110173143037}
+    - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDeath
       objectReference: {fileID: 0}
     - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
@@ -245,6 +270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartPatrolling
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}

@@ -151,16 +151,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b5737db782ab2594f9a903fb28557a84,
         type: 2}
-    - target: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
-        type: 3}
-      propertyPath: _power
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
-        type: 3}
-      propertyPath: _timePerDirection
-      value: 0.08
-      objectReference: {fileID: 0}
     - target: {fileID: 3143364481025045097, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: m_RootOrder

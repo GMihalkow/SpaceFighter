@@ -1,4 +1,5 @@
-﻿using SpaceFighter.Core;
+﻿using SpaceFighter.AI;
+using SpaceFighter.Core;
 using UnityEngine;
 
 namespace SpaceFighter.Obstacles
@@ -20,7 +21,16 @@ namespace SpaceFighter.Obstacles
             if (obstacleComponent == null) return;
 
             this._health.TakeDamage(obstacleComponent.StaticDamage);
-            obstacleComponent.GetComponent<Health>().Explode();
+            var isEnemy = obstacleComponent.CompareTag("Enemy");
+            
+            if (isEnemy)
+            {
+                obstacleComponent.GetComponent<BaseAI>().OnDeath();
+            }
+            else
+            {
+                obstacleComponent.GetComponent<Health>().Explode();
+            }
         }
     }
 }

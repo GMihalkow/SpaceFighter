@@ -1,4 +1,5 @@
 ﻿using SpaceFighter.Control;
+using SpaceFighter.Core;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,12 +13,18 @@ namespace SpaceFighter.UI
         [SerializeField] GameObject _gameOverScreen;
         [SerializeField] GameObject _gamePausedScreen;
 
+        private Health _playerHealth;
         private GameObject _gamePausedScreenInstance;
         private bool _gameIsPaused;
 
+        private void Awake()
+        {
+            this._playerHealth = this._player.GetComponent<Health>();
+        }
+
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !this._playerHealth.IsDead)
             {
                 if (this._gamePausedScreenInstance != null)
                 {

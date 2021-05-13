@@ -411,7 +411,8 @@ MonoBehaviour:
   _containerPrefab: {fileID: 4641250109500637368, guid: 5bb664e08c7990f4abfbc9f6e16ca7b5,
     type: 3}
   _spritesDirectory: Planets/
-  _spawnFrequency: 15
+  _maxSpawnFrequency: 10
+  _minSpawnFrequency: 5
   _spawnOffset: 5
 --- !u!1001 &3306613682738335084
 PrefabInstance:
@@ -535,5 +536,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1050336937}
+    - target: {fileID: 3306613684114559815, guid: 1f8ddfb7506728242bfcb6b1614c9735,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f8ddfb7506728242bfcb6b1614c9735, type: 3}

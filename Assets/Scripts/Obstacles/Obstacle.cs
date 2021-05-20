@@ -20,10 +20,9 @@ namespace SpaceFighter.Obstacles
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var projectile = collision.GetComponent<Projectile>();
-            if (this._health.IsDead || projectile == null || this.CompareTag(projectile.tag)) return;
+            if (this._health.IsDead || projectile == null || this.CompareTag(projectile.tag) || projectile.HasExploded) return;
 
-            projectile.PlayHitEffect();
-            GameObject.Destroy(projectile.gameObject);
+            projectile.PlayHitEffect(true, true);
 
             this._health.TakeDamage(projectile.AttackDamage);
         }

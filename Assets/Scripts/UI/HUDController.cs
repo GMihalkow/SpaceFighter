@@ -25,7 +25,7 @@ namespace SpaceFighter.UI
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && !this._playerHealth.IsDead)
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape)) && !this._playerHealth.IsDead)
             {
                 if (this._gamePausedScreenInstance != null)
                 {
@@ -48,6 +48,23 @@ namespace SpaceFighter.UI
             if (this._gameOverScreen == null) throw new InvalidOperationException("No game end screen prefab found!");
 
             this.SetInGameMenuEvents(this.RestartGame, "RestartButton", this._gameOverScreen);
+        }
+
+        private void ToggleSound()
+        {
+            if (!this._gameIsPaused || this._gamePausedScreenInstance == null) return;
+
+            var isCurrentlyMuted = AudioListener.volume == 0f;
+
+            AudioListener.volume = isCurrentlyMuted ? 1f : 0f;
+
+            var btn = this._gamePausedScreenInstance.transform.GetChild(0).Find("SoundToggleButton");
+            var btnText = btn?.GetComponentInChildren<Text>();
+
+            if (btn == null || btnText == null) return;
+
+            // TODO [GM]: fix muted text when menu is opened from in game
+            btnText.text = $"Sound " + (isCurrentlyMuted ? "On" : "Off");
         }
 
         private void RestartGame()
@@ -89,6 +106,17 @@ namespace SpaceFighter.UI
 
             var quitBtn = hud.transform.Find("QuitButton")?.GetComponent<Button>();
             quitBtn?.onClick.AddListener(this.QuitGame);
+
+            var soundBtn = hud.transform.Find("SoundToggleButton")?.GetComponent<Button>();
+
+            if (soundBtn)
+            {
+                var soundBtnText = soundBtn.GetComponentInChildren<Text>();
+                var isSoundMuted = AudioListener.volume <= 0f;
+                soundBtnText.text = $"Sound " + (isSoundMuted ? "Off" : "On");
+
+                soundBtn.onClick.AddListener(this.ToggleSound);
+            }
 
             return prefabInstance;
         }

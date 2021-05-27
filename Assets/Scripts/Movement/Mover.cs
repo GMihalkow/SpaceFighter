@@ -31,13 +31,15 @@ namespace SpaceFighter.Movement
         /// </summary>
         /// <param name="addition">amount to move object with</param>
         /// <param name="space">world of local axis</param>
-        public void MoveInBounds(Vector3 addition, Space space = Space.World)
+        public void MoveInBounds(Vector3 addition, Space space = Space.World, bool isPlayer = false)
         {
             var speed = this._useMinSpeed ? this._minSpeed : this._maxSpeed;
+            var minY = isPlayer ? this._mapBounds.PlayerMinY : this._mapBounds.MinY;
+            var maxY = isPlayer ? this._mapBounds.PlayerMaxY : this._mapBounds.MaxY;
 
             var currPos = this.transform.position;
             var x = Mathf.Clamp((addition.x * speed * Time.deltaTime) + currPos.x, this._mapBounds.MinX, this._mapBounds.MaxX);
-            var y = Mathf.Clamp((addition.y * speed * Time.deltaTime) + currPos.y, this._mapBounds.MinY, this._mapBounds.MaxY);
+            var y = Mathf.Clamp((addition.y * speed * Time.deltaTime) + currPos.y, minY, maxY);
 
             if (space == Space.World)
             {

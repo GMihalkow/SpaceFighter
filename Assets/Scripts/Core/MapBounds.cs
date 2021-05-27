@@ -4,6 +4,8 @@ namespace SpaceFighter.Core
 {
     public class MapBounds : MonoBehaviour
     {
+        [SerializeField] float _playerMapBoundsFragment = 0.8f;
+
         private SpriteRenderer _bg;
         private Camera _mainCamera;
         private float _minY;
@@ -14,6 +16,8 @@ namespace SpaceFighter.Core
         private float _maxCameraY;
         private float _minCameraX;
         private float _maxCameraX;
+        private float _playerMinY;
+        private float _playerMaxY;
 
         public float MinX => this._minX;
 
@@ -22,6 +26,10 @@ namespace SpaceFighter.Core
         public float MinY => this._minY;
 
         public float MaxY => this._maxY;
+
+        public float PlayerMinY => this._playerMinY;
+        
+        public float PlayerMaxY => this._playerMaxY;
 
         private void Awake()
         {
@@ -32,6 +40,9 @@ namespace SpaceFighter.Core
             this._minY = this._maxY * -1;
             this._maxX = this._bg.bounds.size.y / 2;
             this._minX = this._maxX * -1;
+
+            this._playerMinY = this.MinY * this._playerMapBoundsFragment;
+            this._playerMaxY = this.MaxY * this._playerMapBoundsFragment;
         }
 
         private void LateUpdate()

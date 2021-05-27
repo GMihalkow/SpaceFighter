@@ -85,7 +85,7 @@ namespace SpaceFighter.Control
             var xAxis = Input.GetAxis("Horizontal");
             var yAxis = Input.GetAxis("Vertical");
 
-            this._mover.MoveInBounds(new Vector3(xAxis, yAxis));
+            this._mover.MoveInBounds(new Vector3(xAxis, yAxis), isPlayer: true);
         }
     }
 }

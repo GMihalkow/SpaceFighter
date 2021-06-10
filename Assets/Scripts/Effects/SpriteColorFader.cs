@@ -23,7 +23,7 @@ namespace SpaceFighter.Effects
         /// </summary>
         public void Fade()
         { 
-            this.StopAllCoroutines();   
+            this.StopAllCoroutines();
             this.StartCoroutine(this.FadeInOutCoroutine());
         }
 

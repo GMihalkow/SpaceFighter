@@ -379,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
         type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
         type: 3}
@@ -420,7 +420,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 7169166074619242254}
+      objectReference: {fileID: 1212433887621070409}
     - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
         type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -439,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
         type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnPlayerDeath
+      value: Fade
       objectReference: {fileID: 0}
     - target: {fileID: 6634564698163591118, guid: 514d30f3e1367334a8c033302f0dadc3,
         type: 3}
@@ -490,6 +490,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a667feacfb1ec34c9afebcf210f0415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1212433887621070409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3902365614033436290, guid: 514d30f3e1367334a8c033302f0dadc3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2807030009018302667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3495705942372267581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe146657c1a5b104485e896379f52ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &9220280219336500391

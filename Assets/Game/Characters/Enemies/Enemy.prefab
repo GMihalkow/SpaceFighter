@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7058705288278675750}
   - component: {fileID: 3200721667369227000}
   - component: {fileID: 2857722425323468324}
+  - component: {fileID: 1947211959896169072}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -127,6 +128,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1947211959896169072}
+        m_MethodName: Fade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7058705288278675750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +198,19 @@ MonoBehaviour:
   _power: 0.7
   _randomize: 0
   _timePerDirection: 0.05
+--- !u!114 &1947211959896169072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188690260313472497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe146657c1a5b104485e896379f52ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 1
+  _speed: 5
+  _fadeInColor: {r: 1, g: 0, b: 0, a: 1}
+  _fadeOutColor: {r: 1, g: 1, b: 1, a: 1}

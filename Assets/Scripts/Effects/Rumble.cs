@@ -21,10 +21,9 @@ namespace SpaceFighter.Effects
 
         public void BeginRumble()
         {
-            if (this._rumbleCoroutine == null)
-            {
-                this._rumbleCoroutine = this.StartCoroutine(this.RumbleCoroutine());
-            }
+            if (this._rumbleCoroutine != null) return;
+         
+            this._rumbleCoroutine = this.StartCoroutine(this.RumbleCoroutine());
         }
 
         private IEnumerator RumbleCoroutine()

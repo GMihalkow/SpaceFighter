@@ -158,11 +158,6 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
-      propertyPath: _power
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2857722425323468324, guid: 3614e9e75b1a9b640ab863800729bb2b,
-        type: 3}
       propertyPath: _randomize
       value: 0
       objectReference: {fileID: 0}

@@ -81,6 +81,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileSpawner: {fileID: 11400000, guid: 2e50d0878b861bb4bb03d1836cd886bd, type: 2}
   _attackDamage: 5
+  _onShoot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3504386684399260924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,20 +100,6 @@ MonoBehaviour:
     type: 3}
   _healthPoints: 20
   _onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 401032691629583863}
-        m_MethodName: OnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onExplode:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 401032691629583863}
@@ -189,6 +178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb8cbc9d182d884a9c2b24ba66388c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _power: 1.2
+  _directions:
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -1, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -1, z: 0}
+  _power: 0.7
   _randomize: 0
   _timePerDirection: 0.05

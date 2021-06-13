@@ -62,6 +62,7 @@ namespace SpaceFighter.Control
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 this._fighter.Shoot();
+                this._timePassedSinceLastShot = 0f;
             }
 
             if (Input.GetKey(KeyCode.Mouse0))

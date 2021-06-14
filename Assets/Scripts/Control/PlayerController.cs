@@ -8,6 +8,7 @@ namespace SpaceFighter.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] Shield _shieldPrefab;
         [SerializeField] float _shootTimeout = 0.15f;
 
         private bool _gameIsPaused;
@@ -15,6 +16,7 @@ namespace SpaceFighter.Control
         private Fighter _fighter;
         private Mover _mover;
         private float _timePassedSinceLastShot;
+        private GameObject _shieldInstance;
 
         private void Awake()
         {
@@ -59,13 +61,13 @@ namespace SpaceFighter.Control
         {
             this._mover.UseMinSpeed = Input.GetKey(KeyCode.Mouse0);
 
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && this._shieldInstance == null)
             {
                 this._fighter.Shoot();
                 this._timePassedSinceLastShot = 0f;
             }
 
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0) && this._shieldInstance == null)
             {
                 this._timePassedSinceLastShot += Time.deltaTime;
                 
@@ -74,6 +76,14 @@ namespace SpaceFighter.Control
                     this._fighter.Shoot();
                     this._timePassedSinceLastShot = 0f;
                 }
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                this.CreateShield();
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse1))
+            {
+                this.DestroyShield();
             }
             else
             {
@@ -87,6 +97,22 @@ namespace SpaceFighter.Control
             var yAxis = Input.GetAxis("Vertical");
 
             this._mover.MoveInBounds(new Vector3(xAxis, yAxis), isPlayer: true);
+        }
+
+        private void CreateShield() 
+        {
+            if (this._shieldInstance != null) return;
+
+            this._shieldInstance = GameObject.Instantiate(this._shieldPrefab.gameObject);
+            this._shieldInstance.GetComponent<Shield>().SetTarget(this.gameObject);
+        }
+
+        private void DestroyShield()
+        {
+            if (this._shieldInstance == null) return;
+
+            GameObject.Destroy(this._shieldInstance);
+            this._shieldInstance = null;
         }
     }
 }

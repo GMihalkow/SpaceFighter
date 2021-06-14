@@ -20,11 +20,20 @@ namespace SpaceFighter.Obstacles
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var projectile = collision.GetComponent<Projectile>();
-            if (this._health.IsDead || projectile == null || this.CompareTag(projectile.tag) || projectile.HasExploded) return;
+            var shield = collision.GetComponent<Shield>();
+            
+            if (this._health.IsDead || (shield == null && projectile == null) || this.CompareTag(collision.tag) || projectile?.HasExploded == true) return;
 
-            projectile.PlayHitEffect(true, true);
-
-            this._health.TakeDamage(projectile.AttackDamage);
+            if (projectile != null)
+            {
+                projectile.PlayHitEffect(true, true);
+                this._health.TakeDamage(projectile.AttackDamage);
+            }
+            else
+            {
+                shield.DecreaseHealth();
+                this._health.Explode();
+            }
         }
     }
 }

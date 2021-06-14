@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a667feacfb1ec34c9afebcf210f0415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shieldPrefab: {fileID: 8092310779489700776, guid: 2b94a4631f939f14e934f70064238c08,
+    type: 3}
   _shootTimeout: 0.15
 --- !u!114 &419486129294849175
 MonoBehaviour:

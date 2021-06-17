@@ -11,6 +11,7 @@ namespace SpaceFighter.Control
         [SerializeField] Shield _shieldPrefab;
         [SerializeField] float _shootTimeout = 0.15f;
 
+        private bool _shieldIsAvailable;
         private bool _gameIsPaused;
         private Health _health;
         private Fighter _fighter;
@@ -20,6 +21,7 @@ namespace SpaceFighter.Control
 
         private void Awake()
         {
+            this._shieldIsAvailable = true;
             this._health = this.GetComponent<Health>();
             this._fighter = this.GetComponent<Fighter>();
             this._mover = this.GetComponent<Mover>();
@@ -61,13 +63,13 @@ namespace SpaceFighter.Control
         {
             this._mover.UseMinSpeed = Input.GetKey(KeyCode.Mouse0);
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && this._shieldInstance == null)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.activeSelf))
             {
                 this._fighter.Shoot();
                 this._timePassedSinceLastShot = 0f;
             }
 
-            if (Input.GetKey(KeyCode.Mouse0) && this._shieldInstance == null)
+            if (Input.GetKey(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.activeSelf))
             {
                 this._timePassedSinceLastShot += Time.deltaTime;
                 
@@ -77,13 +79,13 @@ namespace SpaceFighter.Control
                     this._timePassedSinceLastShot = 0f;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Mouse1))
+            else if (Input.GetKeyDown(KeyCode.Mouse1) && this._shieldIsAvailable)
             {
                 this.CreateShield();
             }
-            else if (Input.GetKeyUp(KeyCode.Mouse1))
+            else if (Input.GetKeyUp(KeyCode.Mouse1) && this._shieldIsAvailable)
             {
-                this.DestroyShield();
+                this.HideShield();
             }
             else
             {
@@ -101,18 +103,39 @@ namespace SpaceFighter.Control
 
         private void CreateShield() 
         {
-            if (this._shieldInstance != null) return;
+            if (this._shieldInstance != null)
+            {
+                this._shieldInstance.SetActive(true);
+                return;
+            }
 
             this._shieldInstance = GameObject.Instantiate(this._shieldPrefab.gameObject);
+            
             this._shieldInstance.GetComponent<Shield>().SetTarget(this.gameObject);
+            this._shieldInstance.GetComponent<Health>().OnDeath.AddListener(() => this._shieldIsAvailable = false);
         }
 
-        private void DestroyShield()
+        private void HideShield()
         {
             if (this._shieldInstance == null) return;
 
-            GameObject.Destroy(this._shieldInstance);
-            this._shieldInstance = null;
+            this._shieldInstance.SetActive(false);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (!collision.CompareTag("ShieldRestore")) return;
+
+            if (this._shieldInstance != null)
+            {
+                this._shieldInstance.GetComponent<Health>().ResetHealth();
+            }
+            else
+            {
+                this._shieldIsAvailable = true;
+            }
+
+            GameObject.Destroy(collision.gameObject);
         }
     }
 }

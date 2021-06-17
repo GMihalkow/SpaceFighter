@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Score
   - LevelBackground
+  - ShieldRestore
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,1856 @@
+fileFormatVersion: 2
+guid: d4af4c4f977a0da459d3eb241ea60df4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8597121239588946999
+    second: burstSpritesheet_0
+  - first:
+      213: 5548534010716013044
+    second: burstSpritesheet_1
+  - first:
+      213: -6853885180067614849
+    second: burstSpritesheet_2
+  - first:
+      213: -1125950249506513217
+    second: burstSpritesheet_3
+  - first:
+      213: -2067835885142383803
+    second: burstSpritesheet_4
+  - first:
+      213: -5333398186774894804
+    second: burstSpritesheet_5
+  - first:
+      213: 1413970589763175984
+    second: burstSpritesheet_6
+  - first:
+      213: -1717510251868755090
+    second: burstSpritesheet_7
+  - first:
+      213: -1846801198463605107
+    second: burstSpritesheet_8
+  - first:
+      213: -242148902932059612
+    second: burstSpritesheet_9
+  - first:
+      213: 8829727097484996456
+    second: burstSpritesheet_10
+  - first:
+      213: -1824000644904511794
+    second: burstSpritesheet_11
+  - first:
+      213: -3409720223566841769
+    second: burstSpritesheet_12
+  - first:
+      213: 8460881650943856669
+    second: burstSpritesheet_13
+  - first:
+      213: 724497616143065856
+    second: burstSpritesheet_14
+  - first:
+      213: 4131416223849446062
+    second: burstSpritesheet_15
+  - first:
+      213: -4939340421868130581
+    second: burstSpritesheet_16
+  - first:
+      213: -6739304931022123784
+    second: burstSpritesheet_17
+  - first:
+      213: 3215327884835679625
+    second: burstSpritesheet_18
+  - first:
+      213: -2955699171698275711
+    second: burstSpritesheet_19
+  - first:
+      213: 121879499695326919
+    second: burstSpritesheet_20
+  - first:
+      213: 7981529308869671477
+    second: burstSpritesheet_21
+  - first:
+      213: 5790291529480356292
+    second: burstSpritesheet_22
+  - first:
+      213: -7176005867777715159
+    second: burstSpritesheet_23
+  - first:
+      213: -4583915760887465684
+    second: burstSpritesheet_24
+  - first:
+      213: 6554044021206701576
+    second: burstSpritesheet_25
+  - first:
+      213: -702143468925593412
+    second: burstSpritesheet_26
+  - first:
+      213: -1509192411772754947
+    second: burstSpritesheet_27
+  - first:
+      213: 7835110032974168372
+    second: burstSpritesheet_28
+  - first:
+      213: -1365967306650662673
+    second: burstSpritesheet_29
+  - first:
+      213: 2204570984207067736
+    second: burstSpritesheet_30
+  - first:
+      213: 865078207231969374
+    second: burstSpritesheet_31
+  - first:
+      213: 4831455567837272694
+    second: burstSpritesheet_32
+  - first:
+      213: 2828737402236022307
+    second: burstSpritesheet_33
+  - first:
+      213: -6024379448336381416
+    second: burstSpritesheet_34
+  - first:
+      213: 3819636317836564971
+    second: burstSpritesheet_35
+  - first:
+      213: 617253179224322967
+    second: burstSpritesheet_36
+  - first:
+      213: -1360769199499164769
+    second: burstSpritesheet_37
+  - first:
+      213: 2573785762656861852
+    second: burstSpritesheet_38
+  - first:
+      213: -6037296647927078847
+    second: burstSpritesheet_39
+  - first:
+      213: 23702846480208162
+    second: burstSpritesheet_40
+  - first:
+      213: 4211601561696828090
+    second: burstSpritesheet_41
+  - first:
+      213: 2398492302502054124
+    second: burstSpritesheet_42
+  - first:
+      213: -7002721415471120087
+    second: burstSpritesheet_43
+  - first:
+      213: -8796928655399678904
+    second: burstSpritesheet_44
+  - first:
+      213: 4878288753150985461
+    second: burstSpritesheet_45
+  - first:
+      213: -3063235347317419821
+    second: burstSpritesheet_46
+  - first:
+      213: -4912502920098658777
+    second: burstSpritesheet_47
+  - first:
+      213: -8461708143121837058
+    second: burstSpritesheet_48
+  - first:
+      213: -3072614227313054388
+    second: burstSpritesheet_49
+  - first:
+      213: -2443876153091294088
+    second: burstSpritesheet_50
+  - first:
+      213: -3820142063476458574
+    second: burstSpritesheet_51
+  - first:
+      213: -2641920638244502743
+    second: burstSpritesheet_52
+  - first:
+      213: 8213706948791175437
+    second: burstSpritesheet_53
+  - first:
+      213: 3950561793369960940
+    second: burstSpritesheet_54
+  - first:
+      213: 53508914395995134
+    second: burstSpritesheet_55
+  - first:
+      213: -5474329776023346809
+    second: burstSpritesheet_56
+  - first:
+      213: -882682791294525671
+    second: burstSpritesheet_57
+  - first:
+      213: -1078234132865503818
+    second: burstSpritesheet_58
+  - first:
+      213: -5373308037585987428
+    second: burstSpritesheet_59
+  - first:
+      213: -4116754631304702393
+    second: burstSpritesheet_60
+  - first:
+      213: 3621809798537353901
+    second: burstSpritesheet_61
+  - first:
+      213: 7195305550805095964
+    second: burstSpritesheet_62
+  - first:
+      213: 5339269763021787332
+    second: burstSpritesheet_63
+  - first:
+      213: 4074464606184768868
+    second: burstSpritesheet_64
+  - first:
+      213: -6438082723463276488
+    second: burstSpritesheet_65
+  - first:
+      213: 6351868169578261612
+    second: burstSpritesheet_66
+  - first:
+      213: -459362480317727622
+    second: burstSpritesheet_67
+  - first:
+      213: 5077250559528249895
+    second: burstSpritesheet_68
+  - first:
+      213: -184958803984585004
+    second: burstSpritesheet_69
+  - first:
+      213: 6610866564932046918
+    second: burstSpritesheet_70
+  - first:
+      213: -7890378634978676624
+    second: burstSpritesheet_71
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: burstSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1151
+        width: 116
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7344aa8c73c1f4770800000000000000
+      internalID: 8597121239588946999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1152
+        width: 118
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1c6ec094a500d40800000000000000
+      internalID: 5548534010716013044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1152
+        width: 118
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f61cefdbb12e0a0800000000000000
+      internalID: -6853885180067614849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1152
+        width: 120
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbed66fa632df50f0800000000000000
+      internalID: -1125950249506513217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1152
+        width: 122
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5436844e7329d43e0800000000000000
+      internalID: -2067835885142383803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1153
+        width: 123
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27e19f4b96fbf5b0800000000000000
+      internalID: -5333398186774894804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1154
+        width: 123
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0360fa582ce6f9310800000000000000
+      internalID: 1413970589763175984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1157
+        width: 127
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b6543968d2a28e0800000000000000
+      internalID: -1717510251868755090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 993
+        width: 129
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86afc24818de56e0800000000000000
+      internalID: -1846801198463605107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 994
+        width: 125
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42aebf11bd6b3acf0800000000000000
+      internalID: -242148902932059612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 995
+        width: 127
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86feb35630e798a70800000000000000
+      internalID: 8829727097484996456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 995
+        width: 126
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec61262d319dfa6e0800000000000000
+      internalID: -1824000644904511794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 996
+        width: 128
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75835daa58d3ea0d0800000000000000
+      internalID: -3409720223566841769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 997
+        width: 130
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10112ba8071b6570800000000000000
+      internalID: 8460881650943856669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 997
+        width: 132
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00323da4ebeed0a00800000000000000
+      internalID: 724497616143065856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 994
+        width: 125
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaaf4d99a2db55930800000000000000
+      internalID: 4131416223849446062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 835
+        width: 132
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee62d95e00f37bb0800000000000000
+      internalID: -4939340421868130581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 835
+        width: 133
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc43612fdd2972a0800000000000000
+      internalID: -6739304931022123784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 833
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98de90cfca32f9c20800000000000000
+      internalID: 3215327884835679625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 832
+        width: 136
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a0208634f3bf6d0800000000000000
+      internalID: -2955699171698275711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 835
+        width: 130
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c60ebc52c001b100800000000000000
+      internalID: 121879499695326919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 830
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53abb835e9614ce60800000000000000
+      internalID: 7981529308869671477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 835
+        width: 130
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c141a0c77f3b5050800000000000000
+      internalID: 5790291529480356292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 834
+        width: 128
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9249df0fea4b96c90800000000000000
+      internalID: -7176005867777715159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 833
+        width: 126
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29fcffe6e8a260c0800000000000000
+      internalID: -4583915760887465684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 831
+        width: 123
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8065c4eff44a4fa50800000000000000
+      internalID: 6554044021206701576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 828
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb854513c3c7146f0800000000000000
+      internalID: -702143468925593412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 825
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3e19e5f754e0be0800000000000000
+      internalID: -1509192411772754947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 668
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43146831017ebbc60800000000000000
+      internalID: 7835110032974168372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 671
+        width: 123
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe84a48c8fb1b0de0800000000000000
+      internalID: -1365967306650662673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 666
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85aabcb31a5389e10800000000000000
+      internalID: 2204570984207067736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 665
+        width: 121
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e584efccb00610c00800000000000000
+      internalID: 865078207231969374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 672
+        width: 119
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a1605ad37cc0340800000000000000
+      internalID: 4831455567837272694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 668
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ea3271ea1b14720800000000000000
+      internalID: 2828737402236022307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 671
+        width: 122
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a0fbd6fca156ca0800000000000000
+      internalID: -6024379448336381416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 667
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be954d76ef2120530800000000000000
+      internalID: 3819636317836564971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 671
+        width: 123
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79375240f7ce09800800000000000000
+      internalID: 617253179224322967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 669
+        width: 118
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f934f8a6f939d1de0800000000000000
+      internalID: -1360769199499164769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 667
+        width: 122
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ebe1fb38ce7b320800000000000000
+      internalID: 2573785762656861852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 665
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14066a88fa6373ca0800000000000000
+      internalID: -6037296647927078847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 662
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2215e900d95345000800000000000000
+      internalID: 23702846480208162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 506
+        width: 116
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba7b6c6e4d927a30800000000000000
+      internalID: 4211601561696828090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 504
+        width: 117
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8c4279a08294120800000000000000
+      internalID: 2398492302502054124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 504
+        width: 117
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921c2d189f551de90800000000000000
+      internalID: -7002721415471120087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 505
+        width: 117
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c827cfef70be580800000000000000
+      internalID: -8796928655399678904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 505
+        width: 119
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4095356c923b340800000000000000
+      internalID: 4878288753150985461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 506
+        width: 120
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d099bb6ea33d75d0800000000000000
+      internalID: -3063235347317419821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 502
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72643792f9843dbb0800000000000000
+      internalID: -4912502920098658777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 507
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef35130a649f19a80800000000000000
+      internalID: -8461708143121837058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 504
+        width: 122
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4da131c3a1eb55d0800000000000000
+      internalID: -3072614227313054388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 401
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cf1f3469b951ed0800000000000000
+      internalID: -2443876153091294088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 346
+        width: 119
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb35f288012cfac0800000000000000
+      internalID: -3820142063476458574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 346
+        width: 121
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923c9a05d23065bd0800000000000000
+      internalID: -2641920638244502743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 347
+        width: 123
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d090bdba3f2fcf170800000000000000
+      internalID: 8213706948791175437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 346
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1fb05250733d630800000000000000
+      internalID: 3950561793369960940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 346
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efbd3eaf21a1eb000800000000000000
+      internalID: 53508914395995134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 349
+        width: 128
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781e8cca2164704b0800000000000000
+      internalID: -5474329776023346809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 348
+        width: 128
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f1a8f8da410c3f0800000000000000
+      internalID: -882682791294525671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 341
+        width: 124
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bda9d5d4c75901f0800000000000000
+      internalID: -1078234132865503818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 342
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c989fee0fcc2e65b0800000000000000
+      internalID: -5373308037585987428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 186
+        width: 131
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74693ad69795ed6c0800000000000000
+      internalID: -4116754631304702393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 183
+        width: 132
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa19d592d0434230800000000000000
+      internalID: 3621809798537353901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 187
+        width: 132
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16522ea64cdad360800000000000000
+      internalID: 7195305550805095964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 186
+        width: 131
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0d5e09f85e81a40800000000000000
+      internalID: 5339269763021787332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 186
+        width: 129
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4658b8dc8f76b8830800000000000000
+      internalID: 4074464606184768868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 185
+        width: 130
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83854699fd557a6a0800000000000000
+      internalID: -6438082723463276488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 185
+        width: 129
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ca2d3527e562850800000000000000
+      internalID: 6351868169578261612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 179
+        width: 126
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cf489024400a9f0800000000000000
+      internalID: -459362480317727622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 17
+        width: 128
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72aa554cb74067640800000000000000
+      internalID: 5077250559528249895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 16
+        width: 117
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4deea6e92f4ee6df0800000000000000
+      internalID: -184958803984585004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 14
+        width: 118
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640184c6d148ebb50800000000000000
+      internalID: 6610866564932046918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burstSpritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 17
+        width: 116
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070b3cebf6ebf7290800000000000000
+      internalID: -7890378634978676624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

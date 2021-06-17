@@ -77,6 +77,17 @@ namespace SpaceFighter.Core
             return new Vector2(x, this._maxCameraY + topOffset);
         }
 
+        public Vector2 GenerateRandomPosition(bool usePlayerBounds = false)
+        {
+            var minY = usePlayerBounds ? this._playerMinY : this._minY;
+            var maxY = usePlayerBounds ? this._playerMaxY : this._maxY;
+
+            var x = Random.Range(this._minX, this._maxX);
+            var y = Random.Range(minY, maxY);
+
+            return new Vector2(x, y);
+        }
+
         public bool IsInBounds(Vector2 pos, float offset = 0) => (pos.x >= this._minX - offset && pos.x <= this._maxX + offset) && (pos.y >= this._minY - offset && pos.y <= this._maxY + offset);
 
         public bool IsBelowBounds(float y) => y <= this.MinY;

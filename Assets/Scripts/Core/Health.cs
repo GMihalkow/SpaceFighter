@@ -17,6 +17,8 @@ namespace SpaceFighter.Core
         private bool _isDead;
         private float _initialHealthPoints;
 
+        public UnityEvent OnDeath => this._onDeath;
+
         public bool IsDead => this._isDead;
 
         private void Awake()
@@ -34,6 +36,12 @@ namespace SpaceFighter.Core
             this._onHealthChange?.Invoke(this._healthPoints / this._initialHealthPoints);
 
             if (this._healthPoints <= 0) this._onDeath.Invoke();
+        }
+
+        public void ResetHealth()
+        {
+            this._healthPoints = this._initialHealthPoints;
+            this._onHealthChange.Invoke(1f);
         }
 
         public void Explode(bool destroyAfter = true)

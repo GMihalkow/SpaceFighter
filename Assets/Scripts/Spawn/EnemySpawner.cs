@@ -5,7 +5,6 @@ namespace SpaceFighter.Spawn
 {
     public class EnemySpawner : Spawner
     {
-        [SerializeField] Transform _container;
         [SerializeField] GameObject[] _enemyPrefabs;
 
         private int _lastIndex = -1;
@@ -14,7 +13,7 @@ namespace SpaceFighter.Spawn
         {
             var prefab = this.GetRandomPrefab();
 
-            GameObject.Instantiate(prefab, position, prefab.transform.rotation, this._container);
+            GameObject.Instantiate(prefab, position, prefab.transform.rotation, this._container.transform);
         }
 
         private GameObject GetRandomPrefab()

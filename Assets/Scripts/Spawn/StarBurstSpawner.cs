@@ -3,11 +3,9 @@ using UnityEngine;
 
 namespace SpaceFighter.Spawn
 {
-    // TODO [GM]: Refactor and reuse code in all spawners
     public class StarBurstSpawner : Spawner
     {
         [SerializeField] GameObject _burstPrefab;
-        [SerializeField] GameObject _container;
         [SerializeField] float _maxSpawnFrequency = 15f;
         [SerializeField] float _minSpawnFrequency = 5f;
 

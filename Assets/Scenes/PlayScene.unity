@@ -606,9 +606,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7b1fc2973a2b64d9e709e5fc11a56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _container: {fileID: 1893312887}
   _burstPrefab: {fileID: 935457314633446806, guid: aec8415805bec7f4f83faa9e82d44588,
     type: 3}
-  _container: {fileID: 1893312887}
   _maxSpawnFrequency: 2
   _minSpawnFrequency: 1
 --- !u!1 &1916439774
@@ -773,7 +773,13 @@ PrefabInstance:
         type: 3}
       propertyPath: _container
       value: 
-      objectReference: {fileID: 299777040}
+      objectReference: {fileID: 299777039}
+    - target: {fileID: 8014758553680634296, guid: b6d813dacc3b88a49b994a9a3d5703f8,
+        type: 3}
+      propertyPath: _container
+      value: 
+      objectReference: {fileID: 5528654063542898396, guid: 07872db1241059d4fb8c6c6851da67b4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6d813dacc3b88a49b994a9a3d5703f8, type: 3}
 --- !u!1001 &3495705943389772661

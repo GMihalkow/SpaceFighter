@@ -5,7 +5,6 @@ namespace SpaceFighter.Spawn
 {
     public class MenuItemsSpawner : Spawner
     {
-        [SerializeField] GameObject _containerPrefab;
         [SerializeField] string _spritesDirectory = "Planets/";
         [SerializeField] float _maxSpawnFrequency = 15f;
         [SerializeField] float _minSpawnFrequency = 5f;
@@ -40,7 +39,7 @@ namespace SpaceFighter.Spawn
 
         public override void Spawn(Vector2 position)
         {
-            var container = GameObject.Instantiate(this._containerPrefab, position, Quaternion.identity);
+            var container = GameObject.Instantiate(this._container, position, Quaternion.identity);
 
             var spriteRenderer = container.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = this.GetRandomSprite();

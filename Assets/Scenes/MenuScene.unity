@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd07c02ff7da04a449f1515d770fefc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _containerPrefab: {fileID: 4641250109500637368, guid: 5bb664e08c7990f4abfbc9f6e16ca7b5,
+  _container: {fileID: 4641250109500637368, guid: 5bb664e08c7990f4abfbc9f6e16ca7b5,
     type: 3}
   _spritesDirectory: Planets/
   _maxSpawnFrequency: 10

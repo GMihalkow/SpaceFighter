@@ -7,6 +7,8 @@ namespace SpaceFighter.AI
 {
     public abstract class BaseAI : MonoBehaviour
     {
+        [SerializeField] GameObject _hitEffect;
+
         private Score _score;
         private Health _health;
         protected Mover _mover;
@@ -21,6 +23,14 @@ namespace SpaceFighter.AI
             this._playerHealth = this._player.GetComponent<Health>();
             this._health = this.GetComponent<Health>();
             this._score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
+        }
+
+        /// <summary>
+        /// called by unity event upon enemy hit
+        /// </summary>
+        public void OnHit()
+        {
+            GameObject.Instantiate(this._hitEffect, this.transform.position, Quaternion.identity);
         }
 
         /// <summary>

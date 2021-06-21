@@ -5,6 +5,7 @@ namespace SpaceFighter.Combat
 {
     public class Shield : MonoBehaviour
     {
+        [SerializeField] GameObject _hitEffect;
         [SerializeField] float _healthDecreaseOnHit = 5f;
 
         private GameObject _target;
@@ -30,6 +31,14 @@ namespace SpaceFighter.Combat
         public void SetTarget(GameObject target)
         {
             this._target = target;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            var projectile = collision.gameObject.GetComponent<Projectile>();
+            if (projectile == null) return;
+
+            GameObject.Instantiate(this._hitEffect, collision.transform.position, Quaternion.identity);
         }
     }
 }

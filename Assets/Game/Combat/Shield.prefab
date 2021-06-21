@@ -483,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c5489a5a6576745ba27718f6301b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitEffect: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
   _healthDecreaseOnHit: 5
 --- !u!50 &5542848737976811167
 Rigidbody2D:

@@ -1,4 +1,5 @@
 ﻿using SpaceFighter.Core;
+using SpaceFighter.Effects;
 using UnityEngine;
 
 namespace SpaceFighter.Combat
@@ -9,10 +10,12 @@ namespace SpaceFighter.Combat
         [SerializeField] float _healthDecreaseOnHit = 5f;
 
         private GameObject _target;
+        private SpriteColorFader _spriteFader;
         private Health _health;
 
         private void Awake()
         {
+            this._spriteFader = this.GetComponent<SpriteColorFader>();
             this._health = this.GetComponent<Health>();
         }
 
@@ -36,7 +39,15 @@ namespace SpaceFighter.Combat
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var projectile = collision.gameObject.GetComponent<Projectile>();
-            if (projectile == null) return;
+            
+            if (projectile == null)
+            {
+                if (collision.CompareTag(this.tag) || collision.CompareTag("ShieldRestore")) return;
+                
+                this._spriteFader.Fade();
+                
+                return;
+            }
 
             GameObject.Instantiate(this._hitEffect, collision.transform.position, Quaternion.identity);
         }

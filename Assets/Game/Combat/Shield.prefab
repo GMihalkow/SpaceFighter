@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 1334826033660815142}
   - component: {fileID: 8092310779489700776}
   - component: {fileID: 5542848737976811167}
+  - component: {fileID: 1786725087906264493}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Player
@@ -454,7 +455,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1786725087906264493}
+        m_MethodName: Fade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &1334826033660815142
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -506,6 +518,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1786725087906264493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3345585945352571227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe146657c1a5b104485e896379f52ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 1
+  _speed: 5
+  _fadeInColor: {r: 1, g: 0, b: 0, a: 1}
+  _fadeOutColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3345585945354251493
 GameObject:
   m_ObjectHideFlags: 0

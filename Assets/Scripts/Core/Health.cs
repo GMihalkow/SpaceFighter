@@ -19,6 +19,10 @@ namespace SpaceFighter.Core
 
         public UnityEvent OnDeath => this._onDeath;
 
+        public float InitialHealthPoints => this._initialHealthPoints;
+
+        public float HealthPoints => this._healthPoints;
+
         public bool IsDead => this._isDead;
 
         private void Awake()

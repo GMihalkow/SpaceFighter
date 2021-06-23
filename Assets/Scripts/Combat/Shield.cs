@@ -13,6 +13,8 @@ namespace SpaceFighter.Combat
         private SpriteColorFader _spriteFader;
         private Health _health;
 
+        public bool HealthIsFull => this._health.InitialHealthPoints == this._health.HealthPoints;
+
         private void Awake()
         {
             this._spriteFader = this.GetComponent<SpriteColorFader>();

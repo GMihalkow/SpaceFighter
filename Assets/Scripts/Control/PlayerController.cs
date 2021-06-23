@@ -17,7 +17,7 @@ namespace SpaceFighter.Control
         private Fighter _fighter;
         private Mover _mover;
         private float _timePassedSinceLastShot;
-        private GameObject _shieldInstance;
+        private Shield _shieldInstance;
 
         private void Awake()
         {
@@ -63,13 +63,13 @@ namespace SpaceFighter.Control
         {
             this._mover.UseMinSpeed = Input.GetKey(KeyCode.Mouse0);
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.activeSelf))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.gameObject.activeSelf))
             {
                 this._fighter.Shoot();
                 this._timePassedSinceLastShot = 0f;
             }
 
-            if (Input.GetKey(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.activeSelf))
+            if (Input.GetKey(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.gameObject.activeSelf))
             {
                 this._timePassedSinceLastShot += Time.deltaTime;
                 
@@ -105,13 +105,13 @@ namespace SpaceFighter.Control
         {
             if (this._shieldInstance != null)
             {
-                this._shieldInstance.SetActive(true);
+                this._shieldInstance.gameObject.SetActive(true);
                 return;
             }
 
-            this._shieldInstance = GameObject.Instantiate(this._shieldPrefab.gameObject);
+            this._shieldInstance = GameObject.Instantiate(this._shieldPrefab.gameObject).GetComponent<Shield>();
             
-            this._shieldInstance.GetComponent<Shield>().SetTarget(this.gameObject);
+            this._shieldInstance.SetTarget(this.gameObject);
             this._shieldInstance.GetComponent<Health>().OnDeath.AddListener(() => this._shieldIsAvailable = false);
         }
 
@@ -119,23 +119,22 @@ namespace SpaceFighter.Control
         {
             if (this._shieldInstance == null) return;
 
-            this._shieldInstance.SetActive(false);
+            this._shieldInstance.gameObject.SetActive(false);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("ShieldRestore")) return;
 
-            if (this._shieldInstance != null)
+            if (this._shieldInstance?.HealthIsFull != true)
             {
                 this._shieldInstance.GetComponent<Health>().ResetHealth();
+                GameObject.Destroy(collision.gameObject);
             }
             else
             {
                 this._shieldIsAvailable = true;
             }
-
-            GameObject.Destroy(collision.gameObject);
         }
     }
 }

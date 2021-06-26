@@ -101,8 +101,10 @@ namespace SpaceFighter.Control
             this._mover.MoveInBounds(new Vector3(xAxis, yAxis), isPlayer: true);
         }
 
-        private void CreateShield() 
+        private void CreateShield(bool isActive = true)
         {
+            this._shieldIsAvailable = true;
+
             if (this._shieldInstance != null)
             {
                 this._shieldInstance.gameObject.SetActive(true);
@@ -110,7 +112,8 @@ namespace SpaceFighter.Control
             }
 
             this._shieldInstance = GameObject.Instantiate(this._shieldPrefab.gameObject).GetComponent<Shield>();
-            
+            this._shieldInstance.gameObject.SetActive(isActive);
+
             this._shieldInstance.SetTarget(this.gameObject);
             this._shieldInstance.GetComponent<Health>().OnDeath.AddListener(() => this._shieldIsAvailable = false);
         }
@@ -124,17 +127,18 @@ namespace SpaceFighter.Control
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (!collision.CompareTag("ShieldRestore")) return;
+            if (!collision.CompareTag("ShieldRestore") || this._shieldInstance?.HealthIsFull == true) return;
 
-            if (this._shieldInstance?.HealthIsFull != true)
+            if (this._shieldInstance == null)
             {
-                this._shieldInstance.GetComponent<Health>().ResetHealth();
-                GameObject.Destroy(collision.gameObject);
-            }
+                this.CreateShield(false);
+            } 
             else
             {
-                this._shieldIsAvailable = true;
+                this._shieldInstance.GetComponent<Health>().ResetHealth();
             }
+
+            GameObject.Destroy(collision.gameObject);
         }
     }
 }

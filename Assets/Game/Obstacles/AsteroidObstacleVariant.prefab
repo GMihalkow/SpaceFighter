@@ -83,6 +83,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4adf642813206741ad0d0f45316bdc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6495087493263999842}
+        m_MethodName: BeginRumble
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _staticDamage: 5
   _rotationSpeed: 20
 --- !u!114 &6219922715820628174
@@ -99,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionPrefab: {fileID: 881424891475017613, guid: 2828f67d9815f494fb027cf6f0b73313,
     type: 3}
-  _healthPoints: 15
+  _healthPoints: 30
   _onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -117,6 +131,28 @@ MonoBehaviour:
   _onHealthChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6495087493263999842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528654063542898396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb8cbc9d182d884a9c2b24ba66388c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _directions:
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -1, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -1, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -1, z: 0}
+  _power: 0.6
+  _randomize: 0
+  _timePerDirection: 0.05
 --- !u!1001 &5906119668951792635
 PrefabInstance:
   m_ObjectHideFlags: 0

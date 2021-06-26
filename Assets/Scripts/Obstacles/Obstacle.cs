@@ -1,11 +1,13 @@
 ﻿using SpaceFighter.Combat;
 using SpaceFighter.Core;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SpaceFighter.Obstacles
 {
     public class Obstacle : MonoBehaviour
     {
+        [SerializeField] UnityEvent _onHit;
         [SerializeField] float _staticDamage = 5f;
         
         private Health _health;
@@ -23,6 +25,8 @@ namespace SpaceFighter.Obstacles
             var shield = collision.GetComponent<Shield>();
             
             if (this._health.IsDead || (shield == null && projectile == null) || this.CompareTag(collision.tag) || projectile?.HasExploded == true) return;
+
+            this._onHit?.Invoke();
 
             if (projectile != null)
             {

@@ -61,15 +61,17 @@ namespace SpaceFighter.Control
 
         private void HandleCombat()
         {
-            this._mover.UseMinSpeed = Input.GetKey(KeyCode.Mouse0);
+            var shieldIsDeactivated = this._shieldInstance == null || !this._shieldInstance.gameObject.activeSelf;
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.gameObject.activeSelf))
+            this._mover.UseMinSpeed = Input.GetKey(KeyCode.Mouse0) && shieldIsDeactivated;
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) && shieldIsDeactivated)
             {
                 this._fighter.Shoot();
                 this._timePassedSinceLastShot = 0f;
             }
 
-            if (Input.GetKey(KeyCode.Mouse0) && (this._shieldInstance == null || !this._shieldInstance.gameObject.activeSelf))
+            if (Input.GetKey(KeyCode.Mouse0) && shieldIsDeactivated)
             {
                 this._timePassedSinceLastShot += Time.deltaTime;
                 

@@ -1,4 +1,5 @@
 ﻿using SpaceFighter.Core;
+using SpaceFighter.Movement;
 using UnityEngine;
 
 namespace SpaceFighter.Obstacles
@@ -10,23 +11,28 @@ namespace SpaceFighter.Obstacles
         private float _bottomOffset = 1f;
         private SpriteRenderer _spriteRenderer;
         private MapBounds _mapBounds;
+        private Mover _mover;
 
         protected override void Awake()
         {
             base.Awake();
 
+            this._mover = this.GetComponent<Mover>();
             this._spriteRenderer = this.GetComponent<SpriteRenderer>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
         private void Update()
         {
+            this._mover.Move(Vector3.down * this._speed);
             this.transform.Rotate(Vector3.back * (this._rotationSpeed * Time.deltaTime));
+        }
 
-            if (this._mapBounds.IsBelowBounds(this.transform.position.y + this._bottomOffset + (this._spriteRenderer.sprite.bounds.size.y / 2)))
-            {
-                GameObject.Destroy(this.gameObject);
-            }
+        private void LateUpdate()
+        {
+            if (!this._mapBounds.IsBelowBounds(this.transform.position.y + this._bottomOffset + (this._spriteRenderer.sprite.bounds.size.y / 2))) return;
+
+            GameObject.Destroy(this.gameObject);
         }
     }
 }

@@ -9,7 +9,10 @@ namespace SpaceFighter.Obstacles
     {
         [SerializeField] UnityEvent _onHit;
         [SerializeField] float _staticDamage = 5f;
+        [SerializeField] float _minSpeed = 1f;
+        [SerializeField] float _maxSpeed = 3f;
         
+        protected float _speed;
         private Health _health;
 
         public float StaticDamage => this._staticDamage;
@@ -17,6 +20,7 @@ namespace SpaceFighter.Obstacles
         protected virtual void Awake()
         {
             this._health = this.GetComponent<Health>();
+            this._speed = Random.Range(this._minSpeed, this._maxSpeed);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

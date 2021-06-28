@@ -42,7 +42,7 @@ namespace SpaceFighter.Combat
         {
             var projectile = collision.gameObject.GetComponent<Projectile>();
             
-            if (projectile == null)
+            if (projectile == null || projectile.HasExploded)
             {
                 if (collision.CompareTag(this.tag) || collision.CompareTag("ShieldRestore")) return;
                 

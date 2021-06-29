@@ -22,8 +22,10 @@ namespace SpaceFighter.Obstacles
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
+
             this._mover.Move(Vector3.down * this._speed);
             this.transform.Rotate(Vector3.back * (this._rotationSpeed * Time.deltaTime));
         }

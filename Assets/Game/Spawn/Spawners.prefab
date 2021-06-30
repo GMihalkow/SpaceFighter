@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: _topOffset
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3665248622392206926, guid: 69b40c251c195f541b4574cc2a2b4cc1,
+        type: 3}
+      propertyPath: _maxSpawnedObjects
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3665248622392206927, guid: 69b40c251c195f541b4574cc2a2b4cc1,
         type: 3}
       propertyPath: m_Name

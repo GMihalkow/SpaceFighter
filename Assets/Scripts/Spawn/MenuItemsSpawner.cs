@@ -24,6 +24,8 @@ namespace SpaceFighter.Spawn
 
         private void Update()
         {
+            if (!this.CanSpawn) return;
+
             if (Mathf.Approximately(this._spawnTimeout, this._currentSpawnFrequency) || this._spawnTimeout >= this._currentSpawnFrequency)
             {
                 var pos = this._mapBounds.GeneratePositionLeftOfCamera(this._spawnOffset);

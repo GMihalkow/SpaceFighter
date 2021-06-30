@@ -26,6 +26,8 @@ namespace SpaceFighter.Spawn
 
         private void Update()
         {
+            if (!this.CanSpawn) return;
+
             if (this._spawnTimeout > this._currentSpawnFrequency || Mathf.Approximately(this._currentSpawnFrequency, this._spawnTimeout))
             {
                 var pos = this._mapBounds.GenerateRandomPosition(true);

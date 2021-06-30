@@ -6,6 +6,7 @@ namespace SpaceFighter.Spawn
     {
         [SerializeField] string _prefabsDirectory;
         [SerializeField] float _collidersScale = 0.8f;
+        [SerializeField] GameObject _prefabContainer;
 
         private Sprite[] _sprites;
 
@@ -16,7 +17,7 @@ namespace SpaceFighter.Spawn
 
         public override void Spawn(Vector2 position)
         {
-            var prefabInstance = GameObject.Instantiate(this._container, position, Quaternion.identity);
+            var prefabInstance = GameObject.Instantiate(this._prefabContainer, position, Quaternion.identity, this._container.transform);
             prefabInstance.GetComponent<SpriteRenderer>().sprite = this.GetRandomSprite();
 
             var boxCollider = prefabInstance.AddComponent<BoxCollider2D>();

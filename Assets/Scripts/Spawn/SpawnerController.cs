@@ -32,7 +32,10 @@ namespace SpaceFighter.Spawn
                 var spawner = this._spawners[0];
                 this._spawners.Remove(spawner);
 
-                spawner.Spawn(pos);
+                if (spawner.CanSpawn)
+                {
+                    spawner.Spawn(pos);
+                }
 
                 this._spawners.Add(spawner);
 

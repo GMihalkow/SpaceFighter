@@ -6,7 +6,6 @@ namespace SpaceFighter.Effects
     public class SpriteColorFader : MonoBehaviour
     {
         [SerializeField] float _duration = 1f;
-        [SerializeField] float _speed = 5f;
         [SerializeField] Color _fadeInColor = Color.red;
         [SerializeField] Color _fadeOutColor = Color.white;
 
@@ -27,23 +26,24 @@ namespace SpaceFighter.Effects
             this.StartCoroutine(this.FadeInOutCoroutine());
         }
 
-        private IEnumerator FadeInOutCoroutine()
+        public IEnumerator FadeInOutCoroutine()
         {
             this._timeout = 0f;
 
             yield return this.FadeCoroutine(this._fadeOutColor, this._fadeInColor);
             
             this._timeout = 0f;
-
+                
             yield return this.FadeCoroutine(this._fadeInColor, this._fadeOutColor);
         }
 
         private IEnumerator FadeCoroutine(Color fadeInColor, Color fadeOutColor)
         {
-            while (!Mathf.Approximately(this._timeout, this._duration) || this._timeout < this._duration)
+            while (!Mathf.Approximately(this._timeout, this._duration) && this._timeout < this._duration && fadeInColor != fadeOutColor)
             {
-                this._spriteRenderer.color = Color.Lerp(fadeOutColor, fadeInColor, this._timeout / this._duration);
-                this._timeout += (Time.deltaTime * this._speed);
+                this._timeout = Mathf.Clamp(this._timeout + Time.deltaTime, 0f, this._duration);
+
+                this._spriteRenderer.color = Color.Lerp(fadeInColor, fadeOutColor, this._timeout / this._duration);
 
                 yield return new WaitForEndOfFrame();
             }

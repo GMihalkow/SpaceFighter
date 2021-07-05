@@ -200,7 +200,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5910119c2a3154246aa648388bc3aecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onHit:
+    m_PersistentCalls:
+      m_Calls: []
   _staticDamage: 5
+  _minSpeed: 1
+  _maxSpeed: 3
+  _hitSlowDownTimeout: 2
 --- !u!114 &2857722425323468324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe146657c1a5b104485e896379f52ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 1
-  _speed: 5
+  _duration: 0.25
   _fadeInColor: {r: 1, g: 0, b: 0, a: 1}
   _fadeOutColor: {r: 1, g: 1, b: 1, a: 1}

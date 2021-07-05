@@ -1,5 +1,6 @@
 ﻿using SpaceFighter.Combat;
 using SpaceFighter.Core;
+using SpaceFighter.Effects;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,15 +15,17 @@ namespace SpaceFighter.Obstacles
         [SerializeField] float _hitSlowDownTimeout = 2f;
         
         protected float _speed;
+        protected SpriteColorFader _fader;
+        protected Health _health;
         private float _initialSpeed;
         private bool _isHit;
         private float _timeSinceSlowDown;
-        private Health _health;
 
         public float StaticDamage => this._staticDamage;
 
         protected virtual void Awake()
         {
+            this._fader = this.GetComponent<SpriteColorFader>();
             this._health = this.GetComponent<Health>();
             this._speed = Random.Range(this._minSpeed, this._maxSpeed);
             this._initialSpeed = this._speed;

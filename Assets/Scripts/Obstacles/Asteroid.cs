@@ -1,5 +1,6 @@
 ﻿using SpaceFighter.Core;
 using SpaceFighter.Movement;
+using System.Collections;
 using UnityEngine;
 
 namespace SpaceFighter.Obstacles
@@ -35,6 +36,23 @@ namespace SpaceFighter.Obstacles
             if (!this._mapBounds.IsBelowBounds(this.transform.position.y + this._bottomOffset + (this._spriteRenderer.sprite.bounds.size.y / 2))) return;
 
             GameObject.Destroy(this.gameObject);
+        }
+
+        /// <summary>
+        /// Called from editor
+        /// </summary>
+        public void Explode()
+        {
+            this.StartCoroutine(this.ExplodeCoroutine());
+        }
+        
+        private IEnumerator ExplodeCoroutine()
+        {
+            this._fader.StopAllCoroutines();
+
+            yield return this._fader.FadeInOutCoroutine();
+
+            this._health.Explode();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace SpaceFighter.Obstacles
         private SpriteRenderer _spriteRenderer;
         private MapBounds _mapBounds;
         private Mover _mover;
+        private bool _isExploding;
 
         protected override void Awake()
         {
@@ -25,6 +26,8 @@ namespace SpaceFighter.Obstacles
 
         protected override void Update()
         {
+            if (this._isExploding) return;
+
             base.Update();
 
             this._mover.Move(Vector3.down * this._speed);
@@ -43,6 +46,10 @@ namespace SpaceFighter.Obstacles
         /// </summary>
         public void Explode()
         {
+            if (this._isExploding) return;
+
+            this._isExploding = true;
+
             this.StartCoroutine(this.ExplodeCoroutine());
         }
         

@@ -14,12 +14,12 @@ namespace SpaceFighter.Combat
         [SerializeField] float _destroyOffset = 5f;
 
         protected Mover _mover;
+        protected bool _hasExploded;
         private float _speed;
         private float _attackDamage;
         private MapBounds _mapBounds;
         private SpriteRenderer _spriteRenderer;
         private GameObject _hitEffectPrefab;
-        private bool _hasExploded;
 
         public bool HasExploded => this._hasExploded;
 
@@ -37,6 +37,18 @@ namespace SpaceFighter.Combat
             yield return new WaitForSeconds(this._maxLife);
 
             this.PlayHitEffect(false);
+        }
+
+        protected virtual void FixedUpdate()
+        {
+            if (this._hasExploded) return;
+
+            this._mover.Move(Vector3.right * this._speed, Space.Self, false);
+
+            if (!this._mapBounds.IsInBounds(this.transform.position, this._destroyOffset))
+            {
+                GameObject.Destroy(this.gameObject);
+            }
         }
 
         public void SetConfig(float speed, float attackDamage, GameObject hitEffectPrefab)
@@ -60,18 +72,6 @@ namespace SpaceFighter.Combat
 
             GameObject.Instantiate(this._hitEffectPrefab, this.transform.position, Quaternion.identity);
             GameObject.Destroy(this.gameObject, useDestroyTimeout ? this._explosionTimeout : 0);
-        }
-
-        protected virtual void Update()
-        {
-            if (this._hasExploded) return;
-
-            this._mover.Move(Vector3.right * this._speed, Space.Self, false);
-
-            if (!this._mapBounds.IsInBounds(this.transform.position, this._destroyOffset))
-            {
-                GameObject.Destroy(this.gameObject);
-            }
         }
     }
 }

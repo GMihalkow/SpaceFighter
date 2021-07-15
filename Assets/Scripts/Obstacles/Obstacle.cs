@@ -31,7 +31,7 @@ namespace SpaceFighter.Obstacles
             this._initialSpeed = this._speed;
         }
 
-        protected virtual void Update()
+        protected virtual void FixedUpdate()
         {
             if (!this._isHit) return;
 

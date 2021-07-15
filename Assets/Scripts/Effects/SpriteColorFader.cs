@@ -17,6 +17,11 @@ namespace SpaceFighter.Effects
             this._spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
         }
 
+        public void SetToInitialColor()
+        {
+            this._spriteRenderer.color = this._fadeOutColor;
+        }
+
         /// <summary>
         /// Called from editor
         /// </summary>

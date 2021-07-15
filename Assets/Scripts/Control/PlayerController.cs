@@ -124,6 +124,7 @@ namespace SpaceFighter.Control
         {
             if (this._shieldInstance == null) return;
 
+            this._shieldInstance.ResetFade();
             this._shieldInstance.gameObject.SetActive(false);
         }
 

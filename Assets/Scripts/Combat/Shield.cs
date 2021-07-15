@@ -28,6 +28,12 @@ namespace SpaceFighter.Combat
             this.transform.position = this._target.transform.position;
         }
 
+        public void ResetFade()
+        {
+            this._spriteFader.StopAllCoroutines();
+            this._spriteFader.SetToInitialColor();
+        }
+
         public void DecreaseHealth()
         {
             this._health.TakeDamage(this._healthDecreaseOnHit);

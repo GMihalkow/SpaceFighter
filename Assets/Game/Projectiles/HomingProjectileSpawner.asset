@@ -15,4 +15,6 @@ MonoBehaviour:
   _prefab: {fileID: 4940991721249082812, guid: b4bb6ffcaa1a3734ab0ed1b2c8ace0be, type: 3}
   _hitEffectPrefab: {fileID: 2748914832387483934, guid: 1207a6c6269c787409f4fd52d2171107,
     type: 3}
+  _container: {fileID: 0}
   _speed: 3
+  _poolSize: 10

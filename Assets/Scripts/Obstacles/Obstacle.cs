@@ -60,7 +60,7 @@ namespace SpaceFighter.Obstacles
 
             if (projectile != null)
             {
-                projectile.PlayHitEffect(true, true);
+                projectile.PlayHitEffect(true);
                 this._health.TakeDamage(projectile.AttackDamage);
             }
             else

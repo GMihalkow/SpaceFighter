@@ -22,7 +22,7 @@ namespace SpaceFighter.Combat
             var projectile = collision.GetComponent<Projectile>();
             if (projectile == null || projectile.CompareTag(this.tag) || projectile.HasExploded) return;
 
-            projectile.PlayHitEffect(true, true);
+            projectile.PlayHitEffect(true);
 
             this._onHit?.Invoke();
             this._health.TakeDamage(projectile.AttackDamage);

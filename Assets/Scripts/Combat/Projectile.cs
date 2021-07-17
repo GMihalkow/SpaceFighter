@@ -1,5 +1,6 @@
 ﻿using SpaceFighter.Core;
 using SpaceFighter.Movement;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +10,6 @@ namespace SpaceFighter.Combat
     public class Projectile : MonoBehaviour
     {
         [SerializeField] UnityEvent _onHitSound;
-        [SerializeField] float _explosionTimeout = 2f;
         [SerializeField] float _maxLife = 2f;
         [SerializeField] float _destroyOffset = 5f;
 
@@ -21,27 +21,23 @@ namespace SpaceFighter.Combat
         private SpriteRenderer _spriteRenderer;
         private GameObject _hitEffectPrefab;
 
+        public event Action OnExplode;
+
         public bool HasExploded => this._hasExploded;
 
         public float AttackDamage => this._attackDamage;
 
         protected virtual void Awake()
         {
+            this.gameObject.SetActive(false);
             this._mover = this.GetComponent<Mover>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
             this._spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
         }
 
-        private IEnumerator Start()
-        {
-            yield return new WaitForSeconds(this._maxLife);
-
-            this.PlayHitEffect(false);
-        }
-
         protected virtual void FixedUpdate()
         {
-            if (this._hasExploded) return;
+            if (this._hasExploded || !this.gameObject.activeSelf) return;
 
             this._mover.Move(Vector3.right * this._speed, Space.Self, false);
 
@@ -58,12 +54,12 @@ namespace SpaceFighter.Combat
             this._hitEffectPrefab = hitEffectPrefab;
         }
 
-        public void PlayHitEffect(bool playSound, bool useDestroyTimeout = false)
+        public void PlayHitEffect(bool playSound)
         {
-            if (this._hasExploded) return;
+            if (this._hasExploded || !this.gameObject.activeSelf) return;
 
             this._hasExploded = true;
-            GameObject.Destroy(this._spriteRenderer);
+            this._spriteRenderer.enabled = false;
 
             if (playSound)
             {
@@ -71,7 +67,28 @@ namespace SpaceFighter.Combat
             }
 
             GameObject.Instantiate(this._hitEffectPrefab, this.transform.position, Quaternion.identity);
-            GameObject.Destroy(this.gameObject, useDestroyTimeout ? this._explosionTimeout : 0);
+            this.OnExplode?.Invoke();
+            this.gameObject.SetActive(false);
+        }
+
+        public void Activate(Vector2 startPos, Quaternion rotation)
+        {
+            this.StopAllCoroutines();
+
+            this._hasExploded = false;
+            this._spriteRenderer.enabled = true;
+            this.gameObject.transform.rotation = rotation;
+            this.gameObject.transform.position = new Vector3(startPos.x, startPos.y);
+            this.gameObject.SetActive(true);
+
+            this.StartCoroutine(this.OnActivateCoroutine());
+        }
+
+        private IEnumerator OnActivateCoroutine()
+        {
+            yield return new WaitForSeconds(this._maxLife);
+
+            this.PlayHitEffect(false);
         }
     }
 }

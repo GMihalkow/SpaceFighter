@@ -36,7 +36,7 @@ namespace SpaceFighter.AI
         /// <summary>
         /// called by unity event upon enemy death
         /// </summary>
-        public void OnDeath()
+        public virtual void OnDeath()
         {
             this._score.Increment();
             this._health.Explode();

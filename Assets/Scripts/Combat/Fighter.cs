@@ -10,9 +10,11 @@ namespace SpaceFighter.Combat
         [SerializeField] GameObject _projectilesContainer;
         [SerializeField] UnityEvent _onShoot;
 
+        public GameObject ProjectilesContainer { set => this._projectileSpawner.Container = value; }
+
         private void Awake()
         {
-            this._projectileSpawner.Container = this._projectilesContainer;
+            this.ProjectilesContainer = this._projectilesContainer;
         }
 
         private void Start()

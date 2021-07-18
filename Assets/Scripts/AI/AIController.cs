@@ -17,6 +17,7 @@ namespace SpaceFighter.AI
         private Fighter _fighter;
         private MapBounds _mapBounds;
         private Quaternion _initialRotation;
+        private GameObject _projectilesContainer;
 
         protected override void Awake()
         {
@@ -26,6 +27,13 @@ namespace SpaceFighter.AI
             this._fighter = this.GetComponent<Fighter>();
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
             this._currentAttackTimeout = Random.Range(this._minAttackTimeout, this._maxAttackTimeout);
+        }
+
+        private void Start()
+        {
+            this._projectilesContainer = new GameObject($"{this.name}ProjectilesContainer");
+
+            this._fighter.ProjectilesContainer = this._projectilesContainer;
         }
 
         private void Update()
@@ -58,6 +66,16 @@ namespace SpaceFighter.AI
         {
             this._timePassedSincePatrolStart = 0f;
             this.LookAtPlayer();
+        }
+
+        /// <summary>
+        /// Called from Unity event
+        /// </summary>
+        public override void OnDeath()
+        {
+            GameObject.Destroy(this._projectilesContainer);
+
+            base.OnDeath();
         }
 
         private void HandlePatrol()

@@ -12,6 +12,7 @@ namespace SpaceFighter.Combat
         [SerializeField] UnityEvent _onHitSound;
         [SerializeField] float _maxLife = 2f;
         [SerializeField] float _destroyOffset = 5f;
+        [SerializeField] bool _destroyWhenOutsideOfScreen = false;
 
         protected Mover _mover;
         protected bool _hasExploded;
@@ -45,6 +46,15 @@ namespace SpaceFighter.Combat
             {
                 GameObject.Destroy(this.gameObject);
             }
+
+            if (!this._destroyWhenOutsideOfScreen) return;
+
+            var screenPos = Camera.main.WorldToViewportPoint(this.transform.position);
+
+            if (screenPos.x < 0 || screenPos.x > 1 || screenPos.y < 0 || screenPos.y > 1)
+            {
+                this.PlayHitEffect(false);
+            }
         }
 
         public void SetConfig(float speed, float attackDamage, GameObject hitEffectPrefab)
@@ -58,6 +68,7 @@ namespace SpaceFighter.Combat
         {
             if (this._hasExploded || !this.gameObject.activeSelf) return;
 
+            this.OnExplode?.Invoke();
             this._hasExploded = true;
             this._spriteRenderer.enabled = false;
 
@@ -67,7 +78,6 @@ namespace SpaceFighter.Combat
             }
 
             GameObject.Instantiate(this._hitEffectPrefab, this.transform.position, Quaternion.identity);
-            this.OnExplode?.Invoke();
             this.gameObject.SetActive(false);
         }
 
@@ -86,9 +96,12 @@ namespace SpaceFighter.Combat
 
         private IEnumerator OnActivateCoroutine()
         {
-            yield return new WaitForSeconds(this._maxLife);
+            if (!this._destroyWhenOutsideOfScreen)
+            {
+                yield return new WaitForSeconds(this._maxLife);
 
-            this.PlayHitEffect(false);
+                this.PlayHitEffect(false);
+            }
         }
     }
 }

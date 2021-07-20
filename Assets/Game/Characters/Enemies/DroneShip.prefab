@@ -152,6 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333823564927886355, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
+      propertyPath: _projectilesCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333823564927886355, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
       propertyPath: _projectileSpawner
       value: 
       objectReference: {fileID: 11400000, guid: 2e50d0878b861bb4bb03d1836cd886bd,
@@ -230,8 +235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 7286551110173143037, guid: 942767c3c0e03844f8ee43bb745f014f,
-        type: 3}
+      objectReference: {fileID: 7286551110173143037}
     - target: {fileID: 3504386684399260924, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -301,6 +305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _onHealthChange.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275520889892328952, guid: 3614e9e75b1a9b640ab863800729bb2b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5431929334824753607, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}

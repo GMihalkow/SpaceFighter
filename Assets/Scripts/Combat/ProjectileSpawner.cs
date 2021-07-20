@@ -10,20 +10,19 @@ namespace SpaceFighter.Combat
         [SerializeField] GameObject _prefab;
         [SerializeField] GameObject _hitEffectPrefab;
         [SerializeField] float _speed = 5;
-        [SerializeField] int _poolSize = 50;
 
         private GameObject _container;
         private Queue<GameObject> _projectiles;
 
         public GameObject Container { set => this._container = value; }
 
-        public IEnumerator Prepare()
+        public IEnumerator Prepare(int projectilesCount)
         {
-            this._projectiles = new Queue<GameObject>(this._poolSize);
+            this._projectiles = new Queue<GameObject>(projectilesCount);
 
-            for (int index = 0; index < this._poolSize; index++)
+            for (int index = 0; index < projectilesCount; index++)
             {
-                if (index % 5 == 0) yield return new WaitForEndOfFrame();
+                if (index % 2 == 0) yield return new WaitForEndOfFrame();
 
                 var instance = GameObject.Instantiate(this._prefab, this._container.transform.position, this._container.transform.rotation, this._container.transform);
                 this._projectiles.Enqueue(instance);

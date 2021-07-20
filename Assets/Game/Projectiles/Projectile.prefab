@@ -187,9 +187,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _explosionTimeout: 2
   _maxLife: 2
   _destroyOffset: 5
+  _destroyWhenOutsideOfScreen: 1
 --- !u!114 &8322336200118556346
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ namespace SpaceFighter.Combat
         [SerializeField] ProjectileSpawner _projectileSpawner;
         [SerializeField] float _attackDamage = 5f;
         [SerializeField] GameObject _projectilesContainer;
+        [SerializeField] int _projectilesCount = 0;
         [SerializeField] UnityEvent _onShoot;
 
         public GameObject ProjectilesContainer { set => this._projectileSpawner.Container = value; }
@@ -19,7 +20,7 @@ namespace SpaceFighter.Combat
 
         private void Start()
         {
-            this.StartCoroutine(this._projectileSpawner.Prepare());
+            this.StartCoroutine(this._projectileSpawner?.Prepare(this._projectilesCount));
         }
 
         public void Shoot()

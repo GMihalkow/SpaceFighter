@@ -134,6 +134,7 @@ MonoBehaviour:
   _onShoot:
     m_PersistentCalls:
       m_Calls: []
+  _projectilesCount: 10
 --- !u!114 &6634564698163591118
 MonoBehaviour:
   m_ObjectHideFlags: 0

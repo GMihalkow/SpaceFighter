@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SpaceFighter.Combat
@@ -12,28 +13,25 @@ namespace SpaceFighter.Combat
         [SerializeField] float _speed = 5;
 
         private GameObject _container;
-        private Queue<GameObject> _projectiles;
+        private int _currentProjectileIndex = 0;
 
         public GameObject Container { set => this._container = value; }
 
-        public IEnumerator Prepare(int projectilesCount)
+        public void Prepare(int projectilesCount)
         {
-            this._projectiles = new Queue<GameObject>(projectilesCount);
-
             for (int index = 0; index < projectilesCount; index++)
             {
-                if (index % 2 == 0) yield return new WaitForEndOfFrame();
-
-                var instance = GameObject.Instantiate(this._prefab, this._container.transform.position, this._container.transform.rotation, this._container.transform);
-                this._projectiles.Enqueue(instance);
-
-                instance.GetComponent<Projectile>().OnExplode += () => this._projectiles.Enqueue(instance);
+                GameObject.Instantiate(this._prefab, this._container.transform.position, this._container.transform.rotation, this._container.transform);
             }
         }
 
         public void Shoot(Vector2 startPos, float attackDamage, Quaternion rotation)
         {
-            var projectile = this._projectiles.Dequeue().GetComponent<Projectile>();
+            if (this._container == null) return;
+            if (this._currentProjectileIndex >= this._container.transform.childCount) this._currentProjectileIndex = 0;
+
+            var projectile = this._container.transform.GetChild(this._currentProjectileIndex)?.GetComponent<Projectile>();
+            this._currentProjectileIndex++;
 
             projectile.SetConfig(this._speed, attackDamage, this._hitEffectPrefab);
             projectile.Activate(startPos, rotation);

@@ -15,12 +15,14 @@ namespace SpaceFighter.Combat
 
         private void Awake()
         {
+            if (this._projectilesContainer == null) return;
+
             this.ProjectilesContainer = this._projectilesContainer;
         }
 
         private void Start()
         {
-            this.StartCoroutine(this._projectileSpawner?.Prepare(this._projectilesCount));
+            this._projectileSpawner.Prepare(this._projectilesCount);
         }
 
         public void Shoot()

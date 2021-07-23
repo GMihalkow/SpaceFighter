@@ -153,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 2333823564927886355, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}
       propertyPath: _projectilesCount
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2333823564927886355, guid: 3614e9e75b1a9b640ab863800729bb2b,
         type: 3}

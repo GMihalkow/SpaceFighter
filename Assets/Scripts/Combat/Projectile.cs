@@ -1,6 +1,5 @@
 ﻿using SpaceFighter.Core;
 using SpaceFighter.Movement;
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,7 +9,6 @@ namespace SpaceFighter.Combat
     public class Projectile : MonoBehaviour
     {
         [SerializeField] UnityEvent _onHitSound;
-        [SerializeField] float _maxLife = 2f;
         [SerializeField] float _destroyOffset = 5f;
         [SerializeField] bool _destroyWhenOutsideOfScreen = false;
 
@@ -21,8 +19,6 @@ namespace SpaceFighter.Combat
         private MapBounds _mapBounds;
         private SpriteRenderer _spriteRenderer;
         private GameObject _hitEffectPrefab;
-
-        public event Action OnExplode;
 
         public bool HasExploded => this._hasExploded;
 
@@ -44,17 +40,17 @@ namespace SpaceFighter.Combat
 
             if (!this._mapBounds.IsInBounds(this.transform.position, this._destroyOffset))
             {
-                GameObject.Destroy(this.gameObject);
+                this.PlayHitEffect(false);
             }
 
             if (!this._destroyWhenOutsideOfScreen) return;
 
             var screenPos = Camera.main.WorldToViewportPoint(this.transform.position);
+            var isOutsideScreen = screenPos.x < 0 || screenPos.x > 1 || screenPos.y < 0 || screenPos.y > 1;
 
-            if (screenPos.x < 0 || screenPos.x > 1 || screenPos.y < 0 || screenPos.y > 1)
-            {
-                this.PlayHitEffect(false);
-            }
+            if (!isOutsideScreen) return;
+
+            this.PlayHitEffect(false);
         }
 
         public void SetConfig(float speed, float attackDamage, GameObject hitEffectPrefab)
@@ -68,7 +64,6 @@ namespace SpaceFighter.Combat
         {
             if (this._hasExploded || !this.gameObject.activeSelf) return;
 
-            this.OnExplode?.Invoke();
             this._hasExploded = true;
             this._spriteRenderer.enabled = false;
 
@@ -90,18 +85,6 @@ namespace SpaceFighter.Combat
             this.gameObject.transform.rotation = rotation;
             this.gameObject.transform.position = new Vector3(startPos.x, startPos.y);
             this.gameObject.SetActive(true);
-
-            this.StartCoroutine(this.OnActivateCoroutine());
-        }
-
-        private IEnumerator OnActivateCoroutine()
-        {
-            if (!this._destroyWhenOutsideOfScreen)
-            {
-                yield return new WaitForSeconds(this._maxLife);
-
-                this.PlayHitEffect(false);
-            }
         }
     }
 }

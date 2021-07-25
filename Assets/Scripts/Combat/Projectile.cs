@@ -10,7 +10,6 @@ namespace SpaceFighter.Combat
     {
         [SerializeField] UnityEvent _onHitSound;
         [SerializeField] float _destroyOffset = 5f;
-        [SerializeField] bool _destroyWhenOutsideOfScreen = false;
 
         protected Mover _mover;
         protected bool _hasExploded;
@@ -19,6 +18,7 @@ namespace SpaceFighter.Combat
         private MapBounds _mapBounds;
         private SpriteRenderer _spriteRenderer;
         private GameObject _hitEffectPrefab;
+        private float _destroyTimeout;
 
         public bool HasExploded => this._hasExploded;
 
@@ -42,22 +42,14 @@ namespace SpaceFighter.Combat
             {
                 this.PlayHitEffect(false);
             }
-
-            if (!this._destroyWhenOutsideOfScreen) return;
-
-            var screenPos = Camera.main.WorldToViewportPoint(this.transform.position);
-            var isOutsideScreen = screenPos.x < 0 || screenPos.x > 1 || screenPos.y < 0 || screenPos.y > 1;
-
-            if (!isOutsideScreen) return;
-
-            this.PlayHitEffect(false);
         }
 
-        public void SetConfig(float speed, float attackDamage, GameObject hitEffectPrefab)
+        public void SetConfig(float speed, float attackDamage, GameObject hitEffectPrefab, float destroyTimeout)
         {
             this._speed = speed;
             this._attackDamage = attackDamage;
             this._hitEffectPrefab = hitEffectPrefab;
+            this._destroyTimeout = destroyTimeout;
         }
 
         public void PlayHitEffect(bool playSound)
@@ -85,6 +77,15 @@ namespace SpaceFighter.Combat
             this.gameObject.transform.rotation = rotation;
             this.gameObject.transform.position = new Vector3(startPos.x, startPos.y);
             this.gameObject.SetActive(true);
+
+            this.StartCoroutine(this.DestroyAfterTimeout());
+        }
+
+        private IEnumerator DestroyAfterTimeout()
+        {
+            yield return new WaitForSeconds(this._destroyTimeout);
+
+            this.PlayHitEffect(false);
         }
     }
 }

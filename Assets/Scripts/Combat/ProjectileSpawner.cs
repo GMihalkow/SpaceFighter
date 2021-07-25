@@ -11,6 +11,7 @@ namespace SpaceFighter.Combat
         [SerializeField] GameObject _prefab;
         [SerializeField] GameObject _hitEffectPrefab;
         [SerializeField] float _speed = 5;
+        [SerializeField] float _destroyTimeout = 3f;
 
         private GameObject _container;
         private int _currentProjectileIndex = 0;
@@ -33,7 +34,7 @@ namespace SpaceFighter.Combat
             var projectile = this._container.transform.GetChild(this._currentProjectileIndex)?.GetComponent<Projectile>();
             this._currentProjectileIndex++;
 
-            projectile.SetConfig(this._speed, attackDamage, this._hitEffectPrefab);
+            projectile.SetConfig(this._speed, attackDamage, this._hitEffectPrefab, this._destroyTimeout);
             projectile.Activate(startPos, rotation);
         }
     }

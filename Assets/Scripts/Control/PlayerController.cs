@@ -10,9 +10,11 @@ namespace SpaceFighter.Control
     {
         [SerializeField] Shield _shieldPrefab;
         [SerializeField] float _shootTimeout = 0.15f;
+        [SerializeField] bl_Joystick _mobileJoystick;
 
         private bool _shieldIsAvailable;
         private bool _gameIsPaused;
+        private bool _hasClickedUI;
         private Health _health;
         private Fighter _fighter;
         private Mover _mover;
@@ -67,15 +69,18 @@ namespace SpaceFighter.Control
 
             if (Input.GetKeyDown(KeyCode.Mouse0) && shieldIsDeactivated)
             {
-                this._fighter.Shoot();
-                this._timePassedSinceLastShot = 0f;
+                if (!this._hasClickedUI)
+                {
+                    this._fighter.Shoot();
+                    this._timePassedSinceLastShot = 0f;
+                }
             }
 
             if (Input.GetKey(KeyCode.Mouse0) && shieldIsDeactivated)
             {
                 this._timePassedSinceLastShot += Time.deltaTime;
                 
-                if (Mathf.Approximately(this._timePassedSinceLastShot, this._shootTimeout) || this._timePassedSinceLastShot >= this._shootTimeout)
+                if ((Mathf.Approximately(this._timePassedSinceLastShot, this._shootTimeout) || this._timePassedSinceLastShot >= this._shootTimeout) && !this._hasClickedUI)
                 {
                     this._fighter.Shoot();
                     this._timePassedSinceLastShot = 0f;
@@ -93,12 +98,17 @@ namespace SpaceFighter.Control
             {
                 this._timePassedSinceLastShot = 0f;
             }
+
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                this._hasClickedUI = false;
+            }
         }
 
         private void HandleMovement()
         {
-            var xAxis = Input.GetAxis("Horizontal");
-            var yAxis = Input.GetAxis("Vertical");
+            var xAxis = Platform.IsMobileBrowser ? this._mobileJoystick.Horizontal : Input.GetAxis("Horizontal");
+            var yAxis = Platform.IsMobileBrowser ? this._mobileJoystick.Vertical : Input.GetAxis("Vertical");
 
             this._mover.MoveInBounds(new Vector3(xAxis, yAxis), isPlayer: true);
         }
@@ -127,6 +137,23 @@ namespace SpaceFighter.Control
             this._shieldInstance.ResetFade();
             this._shieldInstance.gameObject.SetActive(false);
         }
+
+        /// <summary>
+        /// Called from editor
+        /// </summary>
+        public void OnUIClick()
+        {
+            this._hasClickedUI = true;
+        }
+
+        /// <summary>
+        /// Called from editor
+        /// </summary>
+        public void OnUIOffClick()
+        {
+            this._hasClickedUI = false;
+        }
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

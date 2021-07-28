@@ -115,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shieldPrefab: {fileID: 8092310779489700776, guid: 2b94a4631f939f14e934f70064238c08,
     type: 3}
+  _mobileHUDPrefab: {fileID: 8341755938505553746, guid: 1c8d62a65579062428586b33627d5ca2,
+    type: 3}
   _shootTimeout: 0.15
 --- !u!114 &419486129294849175
 MonoBehaviour:
@@ -131,10 +133,10 @@ MonoBehaviour:
   _projectileSpawner: {fileID: 11400000, guid: 9ecc7885d39501a4c85583fac9e69f90, type: 2}
   _attackDamage: 5
   _projectilesContainer: {fileID: 0}
+  _projectilesCount: 10
   _onShoot:
     m_PersistentCalls:
       m_Calls: []
-  _projectilesCount: 10
 --- !u!114 &6634564698163591118
 MonoBehaviour:
   m_ObjectHideFlags: 0

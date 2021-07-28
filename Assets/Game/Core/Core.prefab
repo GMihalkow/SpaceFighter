@@ -361,6 +361,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 966476000191894502}
     m_Modifications:
+    - target: {fileID: 361967824840403622, guid: 514d30f3e1367334a8c033302f0dadc3,
+        type: 3}
+      propertyPath: _mobileHUDContainer
+      value: 
+      objectReference: {fileID: 1173608204227972588}
     - target: {fileID: 419486129294849175, guid: 514d30f3e1367334a8c033302f0dadc3,
         type: 3}
       propertyPath: _projectilePrefab
@@ -714,3 +719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b33a368d8eda6345bca674c78510336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1173608204227972588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8051444871214590283, guid: adc8cb80d6cc47443b78f8484cdbe3a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 9220280219336500391}
+  m_PrefabAsset: {fileID: 0}

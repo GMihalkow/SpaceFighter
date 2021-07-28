@@ -10,6 +10,7 @@ TagManager:
   - Score
   - LevelBackground
   - ShieldRestore
+  - UI
   layers:
   - Default
   - TransparentFX

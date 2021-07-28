@@ -431,6 +431,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1349010886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2589962562155997805, guid: aea12e3533400d8468f4efee2124811d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3495705943389772661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a667feacfb1ec34c9afebcf210f0415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1409777045
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +749,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2088093435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 427477496233869784, guid: aea12e3533400d8468f4efee2124811d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3495705943389772661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77624f28614e33247a9ad124a2d27f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &232681693989110580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -844,6 +868,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427477496251111768, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 427477496251111768, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 427477496251111768, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 271
+      objectReference: {fileID: 0}
+    - target: {fileID: 427477496251111768, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 229
+      objectReference: {fileID: 0}
     - target: {fileID: 966476000191894502, guid: aea12e3533400d8468f4efee2124811d,
         type: 3}
       propertyPath: m_RootOrder
@@ -899,11 +943,116 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].eventID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].eventID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1349010886}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1349010886}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1349010886}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnUIClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnUIOffClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnUIOffClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259422227547184755, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2589962562155997805, guid: aea12e3533400d8468f4efee2124811d,
         type: 3}
       propertyPath: _shootTimeout
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 2589962562155997805, guid: aea12e3533400d8468f4efee2124811d,
+        type: 3}
+      propertyPath: _mobileJoystick
+      value: 
+      objectReference: {fileID: 2088093435}
     - target: {fileID: 3495705943273743113, guid: aea12e3533400d8468f4efee2124811d,
         type: 3}
       propertyPath: m_IsActive

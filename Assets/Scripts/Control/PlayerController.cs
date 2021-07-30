@@ -33,7 +33,7 @@ namespace SpaceFighter.Control
         {
             if (this._health.IsDead || this._gameIsPaused) return;
 
-            this._mover.LookAt(Input.mousePosition);
+            if (!this._hasClickedUI) this._mover.LookAt(Input.mousePosition);
             this.HandleCombat();
             this.HandleMovement();
         }

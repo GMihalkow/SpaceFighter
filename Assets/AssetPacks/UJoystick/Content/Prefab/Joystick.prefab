@@ -46,9 +46,10 @@ GameObject:
   - component: {fileID: 4035457264636913502}
   - component: {fileID: 4035457264637112108}
   - component: {fileID: 4035457264638268742}
+  - component: {fileID: 2674855485181562186}
   m_Layer: 5
   m_Name: Stick
-  m_TagString: Untagged
+  m_TagString: MobileJoystick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +110,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!58 &2674855485181562186
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035457264648654974}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.20824027, y: 0.3048867}
+  serializedVersion: 2
+  m_Radius: 21.023754
 --- !u!1 &4035457264648710644
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,10 +139,9 @@ GameObject:
   - component: {fileID: 4035457264638449148}
   - component: {fileID: 4035457264638465978}
   - component: {fileID: 2649203097924709100}
-  - component: {fileID: 2501031677475129361}
   m_Layer: 5
   m_Name: Joystick
-  m_TagString: UI
+  m_TagString: MobileJoystick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,16 +240,3 @@ CircleCollider2D:
   m_Offset: {x: 50.94264, y: 48.858932}
   serializedVersion: 2
   m_Radius: 48.99413
---- !u!114 &2501031677475129361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4035457264648710644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []

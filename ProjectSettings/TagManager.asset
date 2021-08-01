@@ -11,6 +11,7 @@ TagManager:
   - LevelBackground
   - ShieldRestore
   - UI
+  - MobileJoystick
   layers:
   - Default
   - TransparentFX

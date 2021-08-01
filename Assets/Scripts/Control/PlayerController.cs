@@ -8,6 +8,8 @@ namespace SpaceFighter.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        private const float MAX_DISTANCE = 1000f;
+
         [SerializeField] Shield _shieldPrefab;
         [SerializeField] float _shootTimeout = 0.15f;
         [SerializeField] bl_Joystick _mobileJoystick;
@@ -32,8 +34,9 @@ namespace SpaceFighter.Control
         private void Update()
         {
             if (this._health.IsDead || this._gameIsPaused) return;
-
             if (!this._hasClickedUI) this._mover.LookAt(Input.mousePosition);
+
+            this.HandleUI();
             this.HandleCombat();
             this.HandleMovement();
         }
@@ -61,6 +64,23 @@ namespace SpaceFighter.Control
             renderer.gameObject.SetActive(false);
         }
 
+        private void HandleUI()
+        {
+            if (!Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Mouse0)) return;
+
+            var hitInfo = this.GetRaycast();
+            var isMobileUI = hitInfo.collider?.CompareTag("MobileJoystick") == true;
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) && isMobileUI)
+            {
+                this._hasClickedUI = isMobileUI;
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse0) && this._hasClickedUI && isMobileUI)
+            {
+                this._hasClickedUI = false;
+            }
+        }
+
         private void HandleCombat()
         {
             var shieldIsDeactivated = this._shieldInstance == null || !this._shieldInstance.gameObject.activeSelf;
@@ -69,11 +89,9 @@ namespace SpaceFighter.Control
 
             if (Input.GetKeyDown(KeyCode.Mouse0) && shieldIsDeactivated)
             {
-                if (!this._hasClickedUI)
-                {
-                    this._fighter.Shoot();
-                    this._timePassedSinceLastShot = 0f;
-                }
+                var hitInfo = this.GetRaycast();
+
+                if (hitInfo.collider?.CompareTag("MobileJoystick") != true) this._mover.LookAt(Input.mousePosition);
             }
 
             if (Input.GetKey(KeyCode.Mouse0) && shieldIsDeactivated)
@@ -97,11 +115,6 @@ namespace SpaceFighter.Control
             else
             {
                 this._timePassedSinceLastShot = 0f;
-            }
-
-            if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                this._hasClickedUI = false;
             }
         }
 
@@ -138,23 +151,6 @@ namespace SpaceFighter.Control
             this._shieldInstance.gameObject.SetActive(false);
         }
 
-        /// <summary>
-        /// Called from editor
-        /// </summary>
-        public void OnUIClick()
-        {
-            this._hasClickedUI = true;
-        }
-
-        /// <summary>
-        /// Called from editor
-        /// </summary>
-        public void OnUIOffClick()
-        {
-            this._hasClickedUI = false;
-        }
-
-
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("ShieldRestore") || this._shieldInstance?.HealthIsFull == true) return;
@@ -169,6 +165,14 @@ namespace SpaceFighter.Control
             }
 
             GameObject.Destroy(collision.gameObject);
+        }
+
+        private RaycastHit2D GetRaycast()
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var hitInfo = Physics2D.Raycast(ray.origin, ray.direction, MAX_DISTANCE);
+
+            return hitInfo;
         }
     }
 }

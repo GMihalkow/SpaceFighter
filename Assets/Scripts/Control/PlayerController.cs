@@ -66,7 +66,7 @@ namespace SpaceFighter.Control
 
         private void HandleUI()
         {
-            if (!Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Mouse0)) return;
+            if ((!Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Mouse0)) || !Platform.IsMobileBrowser) return;
 
             var hitInfo = this.GetRaycast();
             var isMobileUI = hitInfo.collider?.CompareTag("MobileJoystick") == true;

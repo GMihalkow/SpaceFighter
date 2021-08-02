@@ -89,6 +89,8 @@ namespace SpaceFighter.Control
 
             if (Input.GetKeyDown(KeyCode.Mouse0) && shieldIsDeactivated)
             {
+                this._timePassedSinceLastShot = this._shootTimeout;
+
                 var hitInfo = this.GetRaycast();
 
                 if (hitInfo.collider?.CompareTag("MobileJoystick") != true) this._mover.LookAt(Input.mousePosition);

@@ -49,8 +49,11 @@ namespace SpaceFighter.Obstacles
         {
             var projectile = collision.GetComponent<Projectile>();
             var shield = collision.GetComponent<Shield>();
+
+            var isCollisionInvalid = this._health.IsDead || (shield == null && projectile == null) ||
+                this.CompareTag(collision.tag) || projectile?.HasExploded == true;
             
-            if (this._health.IsDead || (shield == null && projectile == null) || this.CompareTag(collision.tag) || projectile?.HasExploded == true) return;
+            if (isCollisionInvalid) return;
 
             this._onHit?.Invoke();
 

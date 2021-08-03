@@ -96,3 +96,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf30fd69219e7b4c9e8700238655aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerMapBoundsFragment: 0.8

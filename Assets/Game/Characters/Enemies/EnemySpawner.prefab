@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9360fd263b1f2ad4e95f9f00736a7f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolCount: 5
+  _container: {fileID: 0}
+  _maxSpawnedObjects: 4
   _enemyPrefabs:
   - {fileID: 7687566103018083274, guid: 4cd10a2e6f7ab4d42947a64a001ef445, type: 3}
   - {fileID: 7694265265792926972, guid: 05a37cd633af7bb4abd4daa156f6032a, type: 3}

@@ -7,6 +7,8 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
     [Header("Settings")]
+    [SerializeField] bool LimitStick = true;
+    [SerializeField, Range(1, 15)] private float Roughness = 5f;
     [SerializeField, Range(1, 15)]private float Radio = 5;//the ratio of the circumference of the joystick
     [SerializeField, Range(0.01f, 1)]private float SmoothTime = 0.5f;//return to default position speed
     [SerializeField, Range(0.5f, 4)] private float OnPressScale = 1.5f;//return to default position speed
@@ -27,7 +29,14 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private Image backImage;
     private Canvas m_Canvas;
     private float diff;
+    private float radius;
     private Vector3 PressScaleVector;
+    private const float PIXELS_TO_UNITS = 200f;
+
+    void Awake()
+    {
+        this.radius = this.GetComponent<CircleCollider2D>().radius;
+    }
 
     /// <summary>
     /// 
@@ -126,9 +135,13 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             //Get Position of current touch
             Vector3 position = bl_JoystickUtils.TouchPosition(m_Canvas,GetTouchID);
 
+            var isOutsideBounds = Vector2.Distance(this.StickRect.transform.position, this.CenterReference.transform.position) > (this.radius / PIXELS_TO_UNITS) && this.LimitStick;
+
             //Rotate into the area circumferential of joystick
             if (Vector2.Distance(DeathArea, position) < radio)
             {
+                if (isOutsideBounds) return;
+
                 StickRect.position = position;
             }
             else
@@ -217,7 +230,7 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         get
         {
-            return (StickRect.position.x - DeathArea.x) / Radio;
+            return ((StickRect.position.x - DeathArea.x) / Radio) * Roughness;
         }
     }
 
@@ -229,7 +242,7 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         get
         {
-            return (StickRect.position.y - DeathArea.y) / Radio;
+            return ((StickRect.position.y - DeathArea.y) / Radio) * Roughness;
         }
     }
 }

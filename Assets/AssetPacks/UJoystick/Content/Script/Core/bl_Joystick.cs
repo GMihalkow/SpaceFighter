@@ -15,12 +15,15 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public Color NormalColor = new Color(1, 1, 1, 1);
     public Color PressColor = new Color(1, 1, 1, 1);
     [SerializeField, Range(0.1f, 5)]private float Duration = 1;
+    [SerializeField] private float maxOffsetY = 200f;
+    [SerializeField] private float maxOffsetX = 200f;
 
     [Header("Reference")]
     [SerializeField]private RectTransform StickRect;//The middle joystick UI
     [SerializeField] private RectTransform CenterReference;
 
     //Privates
+    private Vector2 stickOffsets;
     private Vector3 DeathArea;
     private Vector3 currentVelocity;
     private bool isFree = false;
@@ -49,6 +52,8 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             this.enabled = false;
             return;
         }
+
+        this.stickOffsets = this.StickRect.localPosition;
 
         if (transform.root.GetComponent<Canvas>() != null)
         {
@@ -135,14 +140,22 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             //Get Position of current touch
             Vector3 position = bl_JoystickUtils.TouchPosition(m_Canvas,GetTouchID);
 
-            var isOutsideBounds = Vector2.Distance(this.StickRect.transform.position, this.CenterReference.transform.position) > (this.radius / PIXELS_TO_UNITS) && this.LimitStick;
-
             //Rotate into the area circumferential of joystick
             if (Vector2.Distance(DeathArea, position) < radio)
             {
-                if (isOutsideBounds) return;
+                if (this.LimitStick)
+                {
+                    var localTouchPos = this.StickRect.transform.InverseTransformPoint(position);
+                    var x = Mathf.Clamp(localTouchPos.x + this.stickOffsets.x, 0f, this.maxOffsetX);
+                    var y = Mathf.Clamp(localTouchPos.y + this.stickOffsets.y, 0f, this.maxOffsetY);
+                    var clampedLocalPos = new Vector3(x, y, localTouchPos.z);
 
-                StickRect.position = position;
+                    this.StickRect.transform.localPosition = clampedLocalPos;
+                }
+                else
+                {
+                    StickRect.position = position;
+                }
             }
             else
             {

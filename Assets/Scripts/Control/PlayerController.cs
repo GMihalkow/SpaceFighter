@@ -69,7 +69,7 @@ namespace SpaceFighter.Control
             if ((!Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyUp(KeyCode.Mouse0)) || !Platform.IsMobileBrowser) return;
 
             var hitInfo = this.GetRaycast();
-            var isMobileUI = hitInfo.collider?.CompareTag("MobileJoystick") == true;
+            var isMobileUI = hitInfo.collider?.CompareTag("MobileJoystick") == true || this._hasClickedUI;
 
             if (Input.GetKeyDown(KeyCode.Mouse0) && isMobileUI)
             {

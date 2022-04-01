@@ -42,6 +42,8 @@ namespace SpaceFighter.UI
             btnText.text = $"Sound " + (isCurrentlyMuted ? "On" : "Off");
         }
 
+        public void OnExit() => Application.Quit();
+
         IEnumerator OnPlayCoroutine()
         {
             yield return new WaitForSecondsRealtime(this._playBtnDelay);

@@ -141,7 +141,7 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             Vector3 position = bl_JoystickUtils.TouchPosition(m_Canvas,GetTouchID);
 
             //Rotate into the area circumferential of joystick
-            if (Vector2.Distance(DeathArea, position) < radio)
+            if (Vector2.Distance(DeathArea, this.transform.TransformPoint(position)) < radio)
             {
                 if (this.LimitStick)
                 {

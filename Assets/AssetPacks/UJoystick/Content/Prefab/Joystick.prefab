@@ -224,6 +224,8 @@ MonoBehaviour:
   NormalColor: {r: 1, g: 1, b: 1, a: 1}
   PressColor: {r: 0.065689884, g: 0.99264705, b: 0.7924658, a: 1}
   Duration: 1
+  maxOffsetY: 200
+  maxOffsetX: 200
   StickRect: {fileID: 4035457264636913502}
   CenterReference: {fileID: 4035457264636799346}
 --- !u!58 &2649203097924709100

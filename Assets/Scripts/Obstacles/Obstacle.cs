@@ -48,9 +48,8 @@ namespace SpaceFighter.Obstacles
         private void OnTriggerEnter2D(Collider2D collision)
         {
             var projectile = collision.GetComponent<Projectile>();
-            var shield = collision.GetComponent<Shield>();
 
-            var isCollisionInvalid = this._health.IsDead || (shield == null && projectile == null) ||
+            var isCollisionInvalid = this._health.IsDead || projectile == null ||
                 this.CompareTag(collision.tag) || projectile?.HasExploded == true;
             
             if (isCollisionInvalid) return;
@@ -68,7 +67,6 @@ namespace SpaceFighter.Obstacles
             }
             else
             {
-                shield.DecreaseHealth();
                 this._health.Explode();
             }
         }

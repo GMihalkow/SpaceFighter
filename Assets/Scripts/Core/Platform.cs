@@ -2,7 +2,7 @@
 {
     public static class Platform
     {
-        public static bool IsMobileBrowser
+        public static bool IsMobile
         {
             get
             {

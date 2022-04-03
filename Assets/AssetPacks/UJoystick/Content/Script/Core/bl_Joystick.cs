@@ -232,7 +232,7 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    private float radio { get { return (Radio * 5 + Mathf.Abs((diff - CenterReference.position.magnitude))); } }
+    private float radio { get { return (Radio * 10 + Mathf.Abs((diff - CenterReference.position.magnitude))); } }
     private float smoothTime { get { return (1 - (SmoothTime)); } }
 
     /// <summary>
@@ -258,4 +258,6 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             return ((StickRect.position.y - DeathArea.y) / Radio) * Roughness;
         }
     }
+
+    public bool IsFree => this.isFree;
 }

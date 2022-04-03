@@ -23,7 +23,7 @@ namespace SpaceFighter.UI
         {
             this._playerHealth = this._player.GetComponent<Health>();
 
-            if (!Platform.IsMobileBrowser)
+            if (!Platform.IsMobile)
             {
                 this._mobileJoystick.SetActive(false);
             }

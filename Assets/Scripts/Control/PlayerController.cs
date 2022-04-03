@@ -82,6 +82,7 @@ namespace SpaceFighter.Control
                 if (!touch.HasValue) continue;
                 if (this._attackTouchId.HasValue && touch?.fingerId == this._attackTouchId) continue;
 
+                // TODO [GM]: reuse raycasts?
                 var hitInfo = this.GetRaycast(touch.Value.position);
                 var isMobileUI = hitInfo.collider?.CompareTag("MobileJoystick") == true;
 
@@ -107,6 +108,7 @@ namespace SpaceFighter.Control
                 this._attackTouchId = null;
             }
 
+            // TODO [GM]: extract and reuse code in HandleCombat & HandleUI?
             var touches = this.GetTouchesNotEnded();
 
             if (!(touches?.Length > 0)) return;
@@ -128,6 +130,7 @@ namespace SpaceFighter.Control
 
             if (!this._attackTouchId.HasValue) return;
 
+            // TODO [GM]: fix flag (set it to false somewhere)
             this._mover.UseMinSpeed = true;
             this._mover.LookAt(attackTouch.Value.position);
 

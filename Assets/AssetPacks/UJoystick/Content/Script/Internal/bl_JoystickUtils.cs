@@ -9,7 +9,7 @@ public static class bl_JoystickUtils
 
         if (_Canvas.renderMode == RenderMode.ScreenSpaceOverlay)
         {
-#if UNITY_IOS || UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_IOS || UNITY_ANDROID
             Return = Input.GetTouch(touchID).position;
 #else
             Return = Input.mousePosition;
@@ -18,7 +18,7 @@ public static class bl_JoystickUtils
         else if (_Canvas.renderMode == RenderMode.ScreenSpaceCamera)
         {
             Vector2 tempVector = Vector2.zero;
-#if UNITY_IOS || UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_IOS || UNITY_ANDROID
            Vector3 pos = Input.GetTouch(touchID).position;
 #else
             Vector3 pos = Input.mousePosition;

@@ -62,7 +62,11 @@ namespace SpaceFighter.Control
 
         private void HandleUI()
         {
-            if (Input.touchCount <= 0) return;
+            if (Input.touchCount <= 0) 
+            {
+                this._mobileJoystick.TouchId = null;
+                return;
+            }
 
             var movementTouch = default(Touch?);
 
@@ -71,11 +75,16 @@ namespace SpaceFighter.Control
             if (movementTouch?.phase == TouchPhase.Ended || movementTouch?.phase == TouchPhase.Canceled)
             {
                 this._movementTouchId = null;
+                this._mobileJoystick.TouchId = null;
             }
 
             var touches = this.GetTouchesNotEnded();
 
-            if (!(touches?.Length > 0)) return;
+            if (!(touches?.Length > 0))
+            {
+                this._mobileJoystick.TouchId = null;
+                return;
+            }
 
             foreach (var touch in touches)
             {
@@ -89,6 +98,7 @@ namespace SpaceFighter.Control
                 if (!isMobileUI) continue;
 
                 this._movementTouchId = touch.Value.fingerId;
+                this._mobileJoystick.TouchId = this._movementTouchId;
 
                 break;
             }
@@ -131,13 +141,14 @@ namespace SpaceFighter.Control
             if (!this._attackTouchId.HasValue) return;
 
             // TODO [GM]: fix flag (set it to false somewhere)
-            this._mover.UseMinSpeed = true;
+            this._mover.UseMinSpeed = false;
             this._mover.LookAt(attackTouch.Value.position);
 
             this._timePassedSinceLastShot += Time.deltaTime;
 
             if ((Mathf.Approximately(this._timePassedSinceLastShot, this._shootTimeout) || this._timePassedSinceLastShot >= this._shootTimeout))
             {
+                this._mover.UseMinSpeed = true;
                 this._fighter.Shoot();
                 this._timePassedSinceLastShot = 0f;
             }

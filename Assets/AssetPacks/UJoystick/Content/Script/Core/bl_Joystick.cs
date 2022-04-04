@@ -23,11 +23,11 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private RectTransform CenterReference;
 
     //Privates
+    private int? touchId;
     private Vector2 stickOffsets;
     private Vector3 DeathArea;
     private Vector3 currentVelocity;
     private bool isFree = false;
-    private int lastId = -2;
     private Image stickImage;
     private Image backImage;
     private Canvas m_Canvas;
@@ -110,20 +110,14 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData data)
     {
         //Detect if is the default touchID
-        if (lastId == -2)
+        
+        StopAllCoroutines();
+        StartCoroutine(ScaleJoysctick(true));
+        OnDrag(data);
+        if (backImage != null)
         {
-            //then get the current id of the current touch.
-            //this for avoid that other touch can take effect in the drag position event.
-            //we only need get the position of this touch
-            lastId = data.pointerId;
-            StopAllCoroutines();
-            StartCoroutine(ScaleJoysctick(true));
-            OnDrag(data);
-            if (backImage != null)
-            {
-                backImage.CrossFadeColor(PressColor, Duration, true, true);
-                stickImage.CrossFadeColor(PressColor, Duration, true, true);
-            }
+            backImage.CrossFadeColor(PressColor, Duration, true, true);
+            stickImage.CrossFadeColor(PressColor, Duration, true, true);
         }
     }
 
@@ -134,7 +128,7 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnDrag(PointerEventData data)
     {
         //If this touch id is the first touch in the event
-        if (data.pointerId == lastId)
+        if (this.touchId.HasValue && GetTouchID == this.touchId)
         {
             isFree = false;
             //Get Position of current touch
@@ -172,18 +166,13 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         isFree = true;
         currentVelocity = Vector3.zero;
-        //leave the default id again
-        if (data.pointerId == lastId)
+
+        StopAllCoroutines();
+        StartCoroutine(ScaleJoysctick(false));
+        if (backImage != null)
         {
-            //-2 due -1 is the first touch id
-            lastId = -2;
-            StopAllCoroutines();
-            StartCoroutine(ScaleJoysctick(false));
-            if (backImage != null)
-            {
-                backImage.CrossFadeColor(NormalColor, Duration, true, true);
-                stickImage.CrossFadeColor(NormalColor, Duration, true, true);
-            }
+            backImage.CrossFadeColor(NormalColor, Duration, true, true);
+            stickImage.CrossFadeColor(NormalColor, Duration, true, true);
         }
     }
 
@@ -212,24 +201,10 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
     }
     
-
-    /// <summary>
-    /// Get the touch by the store touchID 
-    /// </summary>
-    public int GetTouchID
+    public int? TouchId
     {
-        get
-        {
-            //find in all touches
-            for (int i = 0; i < Input.touches.Length; i++)
-            {
-                if (Input.touches[i].fingerId == lastId)
-                {
-                    return i;
-                }
-            }
-            return -1;
-        }
+        get => this.touchId;
+        set => this.touchId = value;
     }
 
     private float radio { get { return (Radio * 10 + Mathf.Abs((diff - CenterReference.position.magnitude))); } }
@@ -259,5 +234,22 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    public bool IsFree => this.isFree;
+    /// <summary>
+    /// Get the touch by the store touchID 
+    /// </summary>
+    private int GetTouchID
+    {
+        get
+        {
+            //find in all touches
+            for (int i = 0; i < Input.touches.Length; i++)
+            {
+                if (this.touchId.HasValue && Input.touches[i].fingerId == this.touchId)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+    }
 }

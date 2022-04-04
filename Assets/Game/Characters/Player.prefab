@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSpeed: 5
-  _minSpeed: 3
+  _minSpeed: 1.5
 --- !u!50 &2031065194605889251
 Rigidbody2D:
   serializedVersion: 4
@@ -113,11 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a667feacfb1ec34c9afebcf210f0415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shieldPrefab: {fileID: 8092310779489700776, guid: 2b94a4631f939f14e934f70064238c08,
-    type: 3}
-  _mobileHUDPrefab: {fileID: 8341755938505553746, guid: 1c8d62a65579062428586b33627d5ca2,
-    type: 3}
   _shootTimeout: 0.15
+  _mobileJoystick: {fileID: 0}
 --- !u!114 &419486129294849175
 MonoBehaviour:
   m_ObjectHideFlags: 0

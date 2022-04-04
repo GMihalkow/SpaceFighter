@@ -114,6 +114,7 @@ namespace SpaceFighter.Control
 
             if (attackTouch?.phase == TouchPhase.Ended || attackTouch?.phase == TouchPhase.Canceled)
             {
+                this._mover.UseMinSpeed = false;
                 attackTouch = null;
                 this._attackTouchId = null;
             }
@@ -121,7 +122,11 @@ namespace SpaceFighter.Control
             // TODO [GM]: extract and reuse code in HandleCombat & HandleUI?
             var touches = this.GetTouchesNotEnded();
 
-            if (!(touches?.Length > 0)) return;
+            if (!(touches?.Length > 0))
+            {
+                this._mover.UseMinSpeed = false;
+                return;
+            }
 
             foreach (var touch in touches)
             {
@@ -140,15 +145,13 @@ namespace SpaceFighter.Control
 
             if (!this._attackTouchId.HasValue) return;
 
-            // TODO [GM]: fix flag (set it to false somewhere)
-            this._mover.UseMinSpeed = false;
+            this._mover.UseMinSpeed = true;
             this._mover.LookAt(attackTouch.Value.position);
 
             this._timePassedSinceLastShot += Time.deltaTime;
 
             if ((Mathf.Approximately(this._timePassedSinceLastShot, this._shootTimeout) || this._timePassedSinceLastShot >= this._shootTimeout))
             {
-                this._mover.UseMinSpeed = true;
                 this._fighter.Shoot();
                 this._timePassedSinceLastShot = 0f;
             }

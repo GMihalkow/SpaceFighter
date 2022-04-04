@@ -62,7 +62,7 @@ namespace SpaceFighter.Control
 
         private void HandleUI()
         {
-            if (Input.touchCount <= 0 || !Platform.IsMobile) return;
+            if (Input.touchCount <= 0) return;
 
             var movementTouch = default(Touch?);
 
@@ -96,7 +96,7 @@ namespace SpaceFighter.Control
 
         private void HandleCombat()
         {
-            if (Input.touchCount <= 0 || !Platform.IsMobile) return;
+            if (Input.touchCount <= 0) return;
 
             var attackTouch = default(Touch?);
 
@@ -145,8 +145,8 @@ namespace SpaceFighter.Control
 
         private void HandleMovement()
         {
-            var xAxis = Platform.IsMobile ? this._mobileJoystick.Horizontal : Input.GetAxis("Horizontal");
-            var yAxis = Platform.IsMobile ? this._mobileJoystick.Vertical : Input.GetAxis("Vertical");
+            var xAxis = this._mobileJoystick.Horizontal;
+            var yAxis = this._mobileJoystick.Vertical;
 
             this._mover.MoveInBounds(new Vector3(xAxis, yAxis), isPlayer: true);
         }
@@ -161,7 +161,7 @@ namespace SpaceFighter.Control
 
         private Touch?[] GetTouchesNotEnded()
         {
-            if (Input.touchCount <= 0 || !Platform.IsMobile) return null;
+            if (Input.touchCount <= 0) return null;
 
             var touches = new Touch?[Input.touchCount];
 

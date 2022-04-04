@@ -13,21 +13,12 @@ namespace SpaceFighter.UI
         [SerializeField] PlayerController _player;
         [SerializeField] GameObject _gameOverScreen;
         [SerializeField] GameObject _gamePausedScreen;
-        [SerializeField] GameObject _mobileJoystick;
 
         private Health _playerHealth;
         private GameObject _gamePausedScreenInstance;
         private bool _gameIsPaused;
 
-        private void Awake()
-        {
-            this._playerHealth = this._player.GetComponent<Health>();
-
-            if (!Platform.IsMobile)
-            {
-                this._mobileJoystick.SetActive(false);
-            }
-        }
+        private void Awake() => this._playerHealth = this._player.GetComponent<Health>();
 
         private void Update()
         {

@@ -20,20 +20,20 @@ namespace SpaceFighter.UI
 
         private void Awake() => this._playerHealth = this._player.GetComponent<Health>();
 
-        private void Update()
+        /// <summary>
+        /// Called by editor button event
+        /// </summary>
+        public void TogglePauseMenu()
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape)) && !this._playerHealth.IsDead)
+            if (this._gamePausedScreenInstance != null)
             {
-                if (this._gamePausedScreenInstance != null)
-                {
-                    this.ResumeGame();
-                }
-                else
-                {
-                    this.TogglePausedState();
+                this.ResumeGame();
+            }
+            else
+            {
+                this.TogglePausedState();
 
-                    this._gamePausedScreenInstance = this.SetInGameMenuEvents(this.ResumeGame, "ResumeButton", this._gamePausedScreen);
-                }
+                this._gamePausedScreenInstance = this.SetInGameMenuEvents(this.ResumeGame, "ResumeButton", this._gamePausedScreen);
             }
         }
 

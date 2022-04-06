@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 1050336937}
   - component: {fileID: 1050336936}
   - component: {fileID: 1050336939}
+  - component: {fileID: 1050336940}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -500,6 +501,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMapBoundsFragment: 0.8
+--- !u!114 &1050336940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050336935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59627fcb1c3f87c41891dc91f06793ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _recalculateResolution: 1
 --- !u!1 &1059899479
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +960,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3010982314501782121, guid: 1f8ddfb7506728242bfcb6b1614c9735,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3306613684114559808, guid: 1f8ddfb7506728242bfcb6b1614c9735,
         type: 3}
       propertyPath: m_Pivot.x

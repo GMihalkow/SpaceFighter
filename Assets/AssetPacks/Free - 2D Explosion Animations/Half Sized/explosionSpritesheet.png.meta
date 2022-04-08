@@ -2006,6 +2006,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2014,9 +2016,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -2037,9 +2039,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -3405,6 +3410,69 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      explosionSpritesheet_46: -5695216441453688740
+      explosionSpritesheet_51: -2762398727430867651
+      explosionSpritesheet_13: -1519279526754590041
+      explosionSpritesheet_11: 8553928006655036533
+      explosionSpritesheet_56: -2684818050590047558
+      explosionSpritesheet_14: 8534100116097923328
+      explosionSpritesheet_7: 7689251852828184297
+      explosionSpritesheet_47: -6426843108274229343
+      explosionSpritesheet_25: 4863481774052528044
+      explosionSpritesheet_1: 5573171695162139595
+      explosionSpritesheet_32: 2850372635646503486
+      explosionSpritesheet_44: -5450548045702337753
+      explosionSpritesheet_17: 8211675462255239829
+      explosionSpritesheet_16: -6454969161641549171
+      explosionSpritesheet_41: 280818518613069452
+      explosionSpritesheet_42: 540392439630971118
+      explosionSpritesheet_5: 9116024031023377802
+      explosionSpritesheet_45: -3658212813884137624
+      explosionSpritesheet_3: 8886832922937712813
+      explosionSpritesheet_36: 3702896444621816244
+      explosionSpritesheet_60: 5788936238936190955
+      explosionSpritesheet_24: -162304637487902343
+      explosionSpritesheet_49: 3627061377358619027
+      explosionSpritesheet_59: -4772054564520540635
+      explosionSpritesheet_35: -6257296308507167378
+      explosionSpritesheet_61: 6081545138545511306
+      explosionSpritesheet_28: 3042729890782168447
+      explosionSpritesheet_40: -5138289431159062173
+      explosionSpritesheet_0: -3258593900989410886
+      explosionSpritesheet_15: 6883138405080950444
+      explosionSpritesheet_48: -8754624331065993771
+      explosionSpritesheet_29: -3016546595996668775
+      explosionSpritesheet_10: -1701225390095058096
+      explosionSpritesheet_33: 402928225746908807
+      explosionSpritesheet_12: -173040002756084750
+      explosionSpritesheet_39: 3421658754591883527
+      explosionSpritesheet_9: -6310837560676347826
+      explosionSpritesheet_19: 2929712295029813643
+      explosionSpritesheet_26: -4882426551545266503
+      explosionSpritesheet_20: 5673562296006201946
+      explosionSpritesheet_34: -4476482206029699773
+      explosionSpritesheet_52: 4807362301191504447
+      explosionSpritesheet_31: 6710477813581728032
+      explosionSpritesheet_54: 7721390726841727770
+      explosionSpritesheet_38: 8773355948120203259
+      explosionSpritesheet_6: -9148074149969517321
+      explosionSpritesheet_37: -6698424784712933173
+      explosionSpritesheet_23: 8406149590127141455
+      explosionSpritesheet_27: 8870489936160521461
+      explosionSpritesheet_50: 1364956826713105713
+      explosionSpritesheet_21: -2776209412815040177
+      explosionSpritesheet_57: 692724545685990507
+      explosionSpritesheet_4: -8556124393110752485
+      explosionSpritesheet_30: -8802620715219721388
+      explosionSpritesheet_53: -5784986778463225602
+      explosionSpritesheet_22: -625072630812008744
+      explosionSpritesheet_18: 8043431788041898468
+      explosionSpritesheet_8: -3768532781886862619
+      explosionSpritesheet_55: 4204313165281036913
+      explosionSpritesheet_2: 2879385016615422520
+      explosionSpritesheet_58: -3045963141416505151
+      explosionSpritesheet_43: 3562725425836753160
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -14,8 +14,6 @@ namespace SpaceFighter.UI
 
         public event EventHandler<Vector3> OnLeave;
 
-        public bool HasPassed => this._hasPassed;
-
         private void Awake()
         {
             this._mapBounds = Camera.main.GetComponent<MapBounds>();
